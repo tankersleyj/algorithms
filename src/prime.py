@@ -1,3 +1,5 @@
+# MIT, jtankersley, 2019-05-18
+
 def is_prime(n):
     if n == 1:
         return True

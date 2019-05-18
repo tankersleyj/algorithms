@@ -1,3 +1,4 @@
+# MIT, jtankersley, 2019-05-18
 import math
 
 def is_factorial(n):
@@ -10,6 +11,7 @@ def is_factorial(n):
       print(f"result: {i}! == {n}")
     else:
       print(f"check: {i}! == {f}")
+
 
 def get_factors(n):
   factors = []

@@ -1,3 +1,5 @@
+# MIT, jtankersley, 2019-05-18
+
 def fib_for(n):
     n_m1 = 0
     n_m2 = 1
