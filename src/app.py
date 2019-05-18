@@ -7,6 +7,12 @@ class command():
     self._commands = []
     self._command = ""
 
+  def arg(self, n, default_value):
+    if len(sys.argv) > n:
+      return sys.argv[n]
+    else:
+      return default_value
+        
   def equal(self, command):
     if not command in self._commands:
       self._commands.append(command)
