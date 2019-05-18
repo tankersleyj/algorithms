@@ -2,17 +2,17 @@
 import sys
 
 
-def get_arg(n, default_value):
+def get_arg(n, default):
   if len(sys.argv) > n:
     return sys.argv[n]
   else:
-    return default_value
+    return default
 
 
-def is_equal(n, command):
+def is_arg(n, value):
   result = False
   if len(sys.argv) > n:
-    if command == sys.argv[n]:
+    if value == sys.argv[n]:
       return True
   return result
 
@@ -28,9 +28,10 @@ class CommandHandler():
     return get_arg(n, default_value)
         
   def equal(self, command):
+    # defines argument[1] as a command
     if not command in self._commands:
       self._commands.append(command)
-    if is_equal(1, command):
+    if is_arg(1, command):
       self._command = command
       return True
     else:
@@ -42,11 +43,12 @@ class CommandHandler():
     else:
       return False
 
-  def get_help(self, title="", options=[], run_text='./run.sh'):
+  def get_help(self, title="", example="", options=[]):
     if len(title) > 0:
       print(title)
     if len(options) == 0:
       options = self._commands
+    if len(example) > 0:
+      print(f"  example: {example}")
     if len(options) > 0:
       print(f"  options: {self._commands}")
-    print(f"  example: {run_text} get_factors 40302")
