@@ -1,32 +1,52 @@
 # MIT, jtankersley, 2019-05-18
 import sys
 
-class Command():
+
+def get_arg(n, default_value):
+  if len(sys.argv) > n:
+    return sys.argv[n]
+  else:
+    return default_value
+
+
+def is_equal(n, command):
+  result = False
+  if len(sys.argv) > n:
+    if command == sys.argv[n]:
+      return True
+  return result
+
+
+class CommandHandler():
+  # opinionated class methods using non-opinionated functions
+
   def __init__(self):
-    # print(f"args: {sys.argv[1:]}")
     self._commands = []
     self._command = ""
 
   def arg(self, n, default_value):
-    if len(sys.argv) > n:
-      return sys.argv[n]
-    else:
-      return default_value
+    return get_arg(n, default_value)
         
   def equal(self, command):
     if not command in self._commands:
       self._commands.append(command)
-    if len(sys.argv) > 1:
-      if command == sys.argv[1]:
-        self._command = command
-        return True
+    if is_equal(1, command):
+      self._command = command
+      return True
+    else:
+      return False
   
-  def command(self):
-    return self._command
-  
-  def commands(self):
-    return self._commands
+  def is_handled(self):
+    if self._command in self._commands:
+      return True
+    else:
+      return False
 
-  def get_help(self, run_text='./run.sh'):
-    print(f"  options: {self.commands()}")
+  def get_help(self, title="", options=[], run_text='./run.sh'):
+    if len(title) > 0:
+      print(title)
+    if len(options) == 0:
+      options = self._commands
+    if len(options) > 0:
+      print(f"  options: {self._commands}")
     print(f"  example: {run_text} get_factors 40302")
