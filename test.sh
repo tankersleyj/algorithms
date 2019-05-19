@@ -8,6 +8,8 @@ if [ $# -gt 0 ]; then
     ./_venv/bin/python3 -m unittest discover -s $1
   fi
 else
-  echo "Help: Select folder or file do you want to test"
-  echo "Example: 'tests' or 'test/test_timer.py'"
+  echo "Help: Test <folder> or <file>"
+  echo "Examples:"
+  echo "  ./test.sh tests"
+  echo "  ./test.sh tests/test_timer.py"
 fi
