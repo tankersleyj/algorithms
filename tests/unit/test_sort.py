@@ -1,4 +1,4 @@
-# MIT (c) jtankersley 2019-05-18
+# MIT (c) jtankersley 2019-05-19
 import time
 import unittest
 from src import timer

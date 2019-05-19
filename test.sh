@@ -1,16 +1,12 @@
 #!/bin/bash
-if [ $# -gt 0 ]; then
-  if echo "$1" | grep -q ".py"; then
-    echo "Test file(s): $@"
-    ./_venv/bin/python3 -m unittest $@
-  else
-    echo "Test folder: ./$1"
-    ./_venv/bin/python3 -m unittest discover -s "./$1"
-  fi
-else
-  echo "Help: Test <folder> or <file(s)>"
+if [ $# -eq 0 -o "$1" == '-h' -o "$1" == '--help' ]; then
+  echo "Required: <folder> [<pattern>]"
   echo "Examples:"
   echo "  ./test.sh tests"
-  echo "  ./test.sh tests/test_sort.py"
-  echo "  ./test.sh */*_sort.py */*_timer.py"
+  echo "  ./test.sh tests/unit"
+  echo "  ./test.sh tests/unit *sort*"
+elif [ $# -eq 1 ]; then
+  ./_venv/bin/python3 -m unittest discover -s "./$1"
+else
+  ./_venv/bin/python3 -m unittest discover -s "./$1" -p "$2"
 fi
