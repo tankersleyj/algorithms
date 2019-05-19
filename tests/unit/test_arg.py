@@ -2,14 +2,13 @@
 import unittest
 from src import arg
 
+
 class TestArg(unittest.TestCase):
 
-  def test_(self):
-      print("test arg")
+  def test_get_args(self):
+      print("test get_args")
       self.assertGreater(len(arg.get_args()), 0, "get_args")
+
+  def test_get_arg(self):
+      print("test get_arg")
       self.assertEqual(arg.get_arg(1), 'discover', "get_arg(1)")
-      cmd = arg.CommandHandler()
-      self.assertEqual(cmd.is_command('discover'), True, "is_command")
-      self.assertEqual(cmd._commands, ['discover'], "_commands")
-      self.assertEqual(cmd.is_handled(), True, "is_handled")
-      self.assertEqual(cmd.get_help(), "  commands: ['discover']\n", "get_help")

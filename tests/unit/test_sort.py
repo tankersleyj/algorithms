@@ -11,6 +11,6 @@ def wait(seconds):
 
 class TestTimer(unittest.TestCase):
 
-  def test_print_time_dec(self):
+  def test_sort(self):
       print("test sort")
       self.assertEqual('foo'.upper(), 'FOO')
