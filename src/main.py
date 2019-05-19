@@ -1,15 +1,16 @@
 # MIT, jtankersley, 2019-05-18
 
 import sys
-from . import arguments
+from . import arg
 from . import fact
 from . import fib
 from . import prime
+from . import sort
 
 def execute():
-  cmd = arguments.CommandHandler()
+  cmd = arg.CommandHandler()
   if cmd.is_command("fib_for"):
-    fib.print_fib_for(int(cmd.arg(2, "10")))
+    fib.print_fib_for(int(cmd.arg(2, 10)))
   if cmd.is_command("fib_rec"):
     fib.print_fib_rec(int(cmd.arg(2, 10)))
   if cmd.is_command("get_factors"):
@@ -20,6 +21,14 @@ def execute():
     prime.print_is_prime(int(cmd.arg(2, 11)))
   if cmd.is_command("is_factorial"):
     fact.print_is_factorial(int(cmd.arg(2, 87178291200)))
+  if cmd.is_command("sort_bubble"):
+    sort.print_sort_bubble()
+  if cmd.is_command("sort_instant"):
+    sort.print_sort_instant()
+  if cmd.is_command("sort_merge"):
+    sort.print_sort_merge()
+  if cmd.is_command("sort_quick"):
+    sort.print_sort_quick()
   if not cmd.is_handled():
     cmd.get_help(
       "---- Basic CS Algorithms in Python (MIT, JTankersley, 2019) ----",
