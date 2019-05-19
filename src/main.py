@@ -17,10 +17,10 @@ def execute():
     fact.print_get_factors(int(cmd.arg(2, 121)))
   if cmd.is_command("get_factorial"):
     fact.print_get_factorial(int(cmd.arg(2, 10)))
-  if cmd.is_command("is_prime"):
-    prime.print_is_prime(int(cmd.arg(2, 11)))
   if cmd.is_command("is_factorial"):
     fact.print_is_factorial(int(cmd.arg(2, 87178291200)))
+  if cmd.is_command("is_prime"):
+    prime.print_is_prime(int(cmd.arg(2, 11)))
   if cmd.is_command("sort_bubble"):
     sort.print_sort_bubble()
   if cmd.is_command("sort_instant"):
@@ -31,6 +31,6 @@ def execute():
     sort.print_sort_quick()
   if not cmd.is_handled():
     cmd.get_help(
-      "---- Basic CS Algorithms in Python (MIT, JTankersley, 2019) ----",
+      "---- CS Algorithms in Python, MIT, (c) 2019, JTankersley ----",
       "./run.sh get_factors 40302"
     )
