@@ -1,4 +1,4 @@
-# MIT, jtankersley, 2019-05-18
+# MIT (c) jtankersley 2019-05-19
 import time
 
 def print_time_dec(func):
