@@ -21,7 +21,7 @@ def fib_rec(n):
         return 0
     if n == 1:
         return 1
-    return fib_rec(n-1) + fib_rec(n-2)
+    return fib_rec(n - 1) + fib_rec(n - 2)
 
 
 def print_fib_rec(n):
