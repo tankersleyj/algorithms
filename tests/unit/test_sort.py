@@ -6,11 +6,11 @@ from src import timer
 
 @timer.print_time_dec
 def wait(seconds):
-  time.sleep(seconds)
+    time.sleep(seconds)
 
 
 class TestTimer(unittest.TestCase):
 
-  def test_so(self):
-      print("test sort")
-      self.assertEqual('foo'.upper(), 'FOO')
+    def test_sort(self):
+        print("test sort")
+        self.assertEqual('foo'.upper(), 'FOO')

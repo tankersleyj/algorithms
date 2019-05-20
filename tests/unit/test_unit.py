@@ -4,6 +4,6 @@ import unittest
 
 class TestUnit(unittest.TestCase):
 
-  def test_unit(self):
-      print("test unit")
-      self.assertEqual('foo'.upper(), 'FOO')
+    def test_unit(self):
+        print("test unit")
+        self.assertEqual('foo'.upper(), 'FOO')

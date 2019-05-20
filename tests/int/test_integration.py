@@ -4,6 +4,6 @@ import unittest
 
 class TestIntegration(unittest.TestCase):
 
-  def test_integration(self):
-      print("test integration")
-      self.assertEqual('foo'.upper(), 'FOO')
+    def test_integration(self):
+        print("test integration")
+        self.assertEqual('foo'.upper(), 'FOO')
