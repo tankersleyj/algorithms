@@ -2,27 +2,39 @@
 import time
 
 
+def print_time(func_name, time_dict):
+    # example: print_time("name", time_dict)
+    begin = time_dict.get("begin", 0)
+    begin_string = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(begin))
+    end = time_dict.get("end", 0)
+    end_string = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end))
+    print(f"time: [{func_name}] ran for [{round(end - begin, 4)}] seconds from [{begin_string}] to [{end_string}]")
+
+
+def run_timed(func, *args, **kwargs):
+    # example: result = run_timed(func, *args, **kwargs)
+    begin = time.time()
+    result = func(*args, **kwargs)
+    print_time(func.__name__, {"begin":begin, "end":time.time()})
+    return result
+
+
 def print_time_dec(func):
-    # decorator
-    # example: result = func()  # (decorated with @print_time_dec)
+    # example: result = decorated_func()
     def decorator(*args, **kwargs):
         begin = time.time()
-        begin_string = time.strftime(
-            '%Y-%m-%d %H:%M:%S', time.localtime(begin))
         result = func(*args, **kwargs)
         end = time.time()
-        end_string = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end))
-        print(f"{func.__name__} ran for {round(end - begin, 4)} seconds from {begin_string} to {end_string}")
+        print_time(func.__name__, {"begin": begin, "end": end})
         return result
     return decorator
 
 
-def log_time_dec(func):
-    # decorator
-    # example: result, time_dict = func()  # (decorated with @log_time_dec)
+def get_time_dec(func):
+    # example: result, time_dict = decorated_func()
     def decorator(*args, **kwargs):
         begin = time.time()
         result = func(*args, **kwargs)
         end = time.time()
-        return result, {"seconds": end - begin, "function": func.__name__}
+        return result, {"begin": begin, "end": end}
     return decorator

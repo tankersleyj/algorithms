@@ -1,16 +1,14 @@
 #  MIT (c) jtankersley 2019-05-18
 
 import sys
-from . import args
-from . import fact
-from . import fib
-from . import prime
-from . import sort
-from . import timer
+from src import args
+from src import fact
+from src import fib
+from src import prime
+from src import sort
 
 
 def execute():
-    print("main.execute")
     cmd = args.CommandHandler()
     if cmd.is_command("fib_for"):
         fib.print_fib_for(int(cmd.arg(2, 10)))

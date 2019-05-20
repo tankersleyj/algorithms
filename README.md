@@ -17,9 +17,9 @@ computer science algorithms
 ./test.sh
 
 ## Debug
-### reference: https://code.visualstudio.com/docs/python/debugging
-edit:  .vscode/launch.json > Python: Module <Name> 
-debug: vscode > Debug > Python: Module <Name>
+reference:  https://code.visualstudio.com/docs/python/debugging
+edit:       .vscode/launch.json > Python: Module <Name>
+debug:      vscode > Debug > Python: Module <Name>
 
 ## Run
 ./run.sh

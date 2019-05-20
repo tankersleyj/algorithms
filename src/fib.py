@@ -1,4 +1,5 @@
 #  MIT (c) jtankersley 2019-05-18
+from src import timer
 
 
 def fib_for(n):
@@ -12,6 +13,7 @@ def fib_for(n):
     return n_m1 + n_m2
 
 
+@timer.print_time_dec
 def print_fib_for(n):
     print(f"fib_for({n})={fib_for(n)}")
 
@@ -24,5 +26,6 @@ def fib_rec(n):
     return fib_rec(n - 1) + fib_rec(n - 2)
 
 
+@timer.print_time_dec
 def print_fib_rec(n):
     print(f"fib_rec({n})={fib_rec(n)}")
