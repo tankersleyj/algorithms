@@ -1,6 +1,6 @@
 #  MIT (c) jtankersley 2019-05-18
 import math
-from . import timer
+from src import timer
 
 
 def is_factorial(n):
@@ -30,7 +30,7 @@ def get_factors(n):
 
 
 @timer.print_time_dec
-def print_get_factors(n, log_time={}):
+def print_get_factors(n):
     print(f"factors of {n} = {get_factors(n)}")
 
 
