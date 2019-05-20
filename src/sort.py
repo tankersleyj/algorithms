@@ -2,16 +2,16 @@
 
 
 def print_sort_bubble():
-  print("merge")
+    print("merge")
 
 
 def print_sort_instant():
-  print("merge")
+    print("merge")
 
 
 def print_sort_merge():
-  print("merge")
+    print("merge")
 
 
 def print_sort_quick():
-  print("quick")
+    print("quick")

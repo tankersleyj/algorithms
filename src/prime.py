@@ -13,4 +13,4 @@ def is_prime(n):
 
 
 def print_is_prime(n):
-  print(f"is_prime({n})={is_prime(n)}")
+    print(f"is_prime({n})={is_prime(n)}")

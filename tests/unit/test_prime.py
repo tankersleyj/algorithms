@@ -5,6 +5,6 @@ from src import prime
 
 class TestPrime(unittest.TestCase):
 
-  def test_is_prime(self):
-      print("test is_prime")
-      self.assertEqual(prime.is_prime(11), True, 'is_prime')
+    def test_is_prime(self):
+        print("test is_prime")
+        self.assertEqual(prime.is_prime(11), True, 'is_prime')
