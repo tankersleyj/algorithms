@@ -1,1 +1,5 @@
+# logging
+# pylint
+# autopep8
+pep8==1.7.1
 ## The following requirements were added by pip freeze:

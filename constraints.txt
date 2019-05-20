@@ -1,3 +1,4 @@
-logging
-pylint
-autopep8
+# logging
+# pylint
+# autopep8
+pep8
