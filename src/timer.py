@@ -12,8 +12,7 @@ def print_time_dec(func):
         result = func(*args, **kwargs)
         end = time.time()
         end_string = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end))
-        print(f"{func.__name__} ran for {round(end - begin, 4)} \
-            seconds from {begin_string} to {end_string}")
+        print(f"{func.__name__} ran for {round(end - begin, 4)} seconds from {begin_string} to {end_string}")
         return result
     return decorator
 
