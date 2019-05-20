@@ -1,4 +1,4 @@
-# MIT (c) jtankersley 2019-05-18
+#  MIT (c) jtankersley 2019-05-18
 import sys
 
 
@@ -45,7 +45,7 @@ class CommandHandler():
         if len(commands) == 0:
             commands = self._commands
         if len(format) > 0:
-            help_text += f"  format: {example}\r\n"
+            help_text += f"  format: {format}\r\n"
         if len(example) > 0:
             help_text += f"  example: {example}\r\n"
         if len(commands) > 0:
