@@ -10,6 +10,9 @@ computer science algorithms
 ## Freeze
 ./freeze.sh
 
+## Lint
+./lint.sh
+
 ## Test
 ./test.sh
 

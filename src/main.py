@@ -1,7 +1,7 @@
 # MIT (c) jtankersley 2019-05-18
 
 import sys
-from . import arg
+from . import args
 from . import fact
 from . import fib
 from . import prime
@@ -11,7 +11,7 @@ from . import timer
 
 def execute():
     print("main.execute")
-    cmd = arg.CommandHandler()
+    cmd = args.CommandHandler()
     if cmd.is_command("fib_for"):
         fib.print_fib_for(int(cmd.arg(2, 10)))
     if cmd.is_command("fib_rec"):
@@ -35,6 +35,7 @@ def execute():
     if not cmd.is_handled():
         help_text = cmd.get_help(
             "---- CS Algorithms in Python, MIT, (c) 2019, JTankersley ----",
+            "run <function> [<value>]",
             "./run.sh get_factors 40302"
         )
         print(f"{help_text}")

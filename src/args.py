@@ -14,7 +14,7 @@ def get_args():
 
 
 class CommandHandler():
-    # defines argument[1] command consuming arguments[2:n]
+    #  defines argument[1] as command consuming arguments[2:n]
 
     def __init__(self):
         self._commands = []
@@ -38,16 +38,16 @@ class CommandHandler():
         else:
             return False
 
-    def get_help(self, title="", example="", commands=[]):
+    def get_help(self, title="", format="", example="", commands=[]):
         help_text = ""
         if len(title) > 0:
             help_text += f"{title}\n"
         if len(commands) == 0:
             commands = self._commands
+        if len(format) > 0:
+            help_text += f"  format: {example}\r\n"
         if len(example) > 0:
             help_text += f"  example: {example}\r\n"
-            # print(f"  example: {example}")
         if len(commands) > 0:
-            # print(f"  commands: {self._commands}")
             help_text += f"  commands: {self._commands}\r\n"
         return help_text
