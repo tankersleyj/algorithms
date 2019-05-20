@@ -4,6 +4,9 @@ computer science algorithms
 ## Setup
 ./setup.sh
 
+## Upgrade
+./upgrade.sh
+
 ## Freeze
 ./freeze.sh
 

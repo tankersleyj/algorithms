@@ -1,5 +1,0 @@
-# logging
-# pylint
-# autopep8
-# pep8
-pycodestyle

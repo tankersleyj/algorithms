@@ -1,6 +1,6 @@
-# logging
-# pylint
-# autopep8
-# pep8
+pydocstyle==3.0.0
 pycodestyle==2.5.0
 ## The following requirements were added by pip freeze:
+pep8==1.7.1
+six==1.12.0
+snowballstemmer==1.2.1
