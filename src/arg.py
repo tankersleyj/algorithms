@@ -45,9 +45,9 @@ class CommandHandler():
     if len(commands) == 0:
       commands = self._commands
     if len(example) > 0:
-      help_text += f"  example: {example}\n"
+      help_text += f"  example: {example}\r\n"
       # print(f"  example: {example}")
     if len(commands) > 0:
       # print(f"  commands: {self._commands}")
-      help_text += f"  commands: {self._commands}\n"
+      help_text += f"  commands: {self._commands}\r\n"
     return help_text

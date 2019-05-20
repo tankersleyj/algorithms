@@ -2,6 +2,7 @@
 import math
 from . import timer
 
+
 def is_factorial(n):
   f = 1
   i = 0
@@ -15,9 +16,10 @@ def is_factorial(n):
   return result
 
 
-@timer.timeit
+@timer.print_time_dec
 def print_is_factorial(n):
   print(f"is_factorial({n}) = {is_factorial(n)}")
+
 
 def get_factors(n):
   factors = []
@@ -27,9 +29,10 @@ def get_factors(n):
   return factors
 
 
-@timer.timeit
+@timer.print_time_dec
 def print_get_factors(n, log_time={}):
   print(f"factors of {n} = {get_factors(n)}")
+
 
 def get_factorial(n):
   result = 0
@@ -41,6 +44,6 @@ def get_factorial(n):
   return result
 
 
-@timer.timeit
+@timer.print_time_dec
 def print_get_factorial(n):
   print(f"get_factorial({n}) = {get_factorial(n)}")

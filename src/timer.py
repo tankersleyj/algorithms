@@ -1,28 +1,27 @@
 # MIT (c) jtankersley 2019-05-19
 import time
 
+
 def print_time_dec(func):
-    # reference: https://www.geeksforgeeks.org/decorators-in-python/
-    # example: @print_time_dec
+    # decorator
+    # example: result = func()  # (decorated with @print_time_dec)
     def decorator(*args, **kwargs): 
-        begin = time.time() 
-        func(*args, **kwargs) 
-        end = time.time() 
-        print("Total time taken in : ", func.__name__, end - begin) 
+        begin = time.time()
+        begin_string = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(begin))
+        result = func(*args, **kwargs) 
+        end = time.time()
+        end_string = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end))
+        print(f"{func.__name__} ran for {round(end - begin, 4)} seconds from {begin_string} to {end_string}") 
+        return result
     return decorator 
 
-def timeit(method):
-    # reference: https://medium.com/pythonhive/python-decorator-to-measure-the-execution-time-of-methods-fa04cb6bb36d
-    # example: @timer(), @timer(time_dict={}), @timer(time_dict={'log_name': 'log'})
-    def timed(*args, **kw):
-        ts = time.time()
-        result = method(*args, **kw)
-        te = time.time()
-        if 'log_time' in kw:
-            name = kw.get('log_name', method.__name__.upper())
-            kw['log_time'][name] = int((te - ts) * 1000)
-        else:
-            print('%r  %2.2f ms' % (method.__name__, (te - ts) * 1000)
-            )
-        return result
-    return timed
+
+def log_time_dec(func):
+    # decorator
+     # example: result, time_dict = func()  # (decorated with @log_time_dec)
+    def decorator(*args, **kwargs):
+        begin = time.time() 
+        result = func(*args, **kwargs) 
+        end = time.time() 
+        return result, {"seconds": end - begin, "function": func.__name__}
+    return decorator
