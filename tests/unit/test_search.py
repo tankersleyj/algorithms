@@ -4,7 +4,7 @@ import unittest
 from src import timer
 
 
-class TestSort(unittest.TestCase):
+class TestSearch(unittest.TestCase):
 
-    def test_sort(self):
+    def test_search(self):
         self.assertEqual('foo'.upper(), 'FOO')

@@ -1,13 +1,8 @@
 #  MIT (c) jtankersley 2019-05-18
-from src import timer
-
-
-def sort_bubble():
-    print("merge")
 
 
 def sort_instant():
-    print("merge")
+    print("instant")
 
 
 def sort_merge():

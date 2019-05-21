@@ -6,6 +6,7 @@ from src import base
 from src import fact
 from src import fib
 from src import prime
+from src import search
 from src import sort
 from src import timer
 
@@ -48,10 +49,18 @@ def execute():
             prime.is_prime,
             int(cmd.arg(2, 11))
         )
-    if cmd.is_command("sort_bubble"):
+    if cmd.is_command("search_binary"):
         timer.run_timed_result(
-            sort.sort_bubble
-        }
+            search.search_binary
+        )
+    if cmd.is_command("search_hash"):
+        timer.run_timed_result(
+            search.search_hash
+        )
+    if cmd.is_command("search_tree"):
+        timer.run_timed_result(
+            search.search_tree
+        )
     if cmd.is_command("sort_instant"):
         timer.run_timed_result(
             sort.print_sort_instant
