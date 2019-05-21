@@ -5,11 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Module - get_factors",
+            "name": "Python: Module - get_factors(123450)",
             "type": "python",
             "request": "launch",
             "module": "src",
             "args": ["get_factors", "12345"]
+        },
+        {
+            "name": "Python: Module - convert_from_base_10(255, 16)",
+            "type": "python",
+            "request": "launch",
+            "module": "src",
+            "args": ["convert_from_base_10", "255", "16"]
+        },
+        {
+            "name": "Python: Module - convert_from_base_10(27, 2)",
+            "type": "python",
+            "request": "launch",
+            "module": "src",
+            "args": ["convert_from_base_10", "27", "2"]
         }
     ]
 }

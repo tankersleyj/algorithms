@@ -1,28 +1,53 @@
 #  MIT (c) jtankersley 2019-05-18
 import math
 
-# int convertToBase(String number, int base) {
-#     if (base < 2 I I (base > 10 && base != 16)) return -1;
-#     int value = 0;
-#     for (int i= number.length() - 1; i >= 0; i--) {
-#         int digit= digitToValue(number.charAt(i));
-#         if (digit < 0 I I digit >= base) {
-#             return -1;
-#         }
-#         int exp= number.length() - 1 - i;
-#         value += digit * Math.pow(base, exp);
-#     }
-#     return value;
-# } 
+
+def _convert_number_to_char(number):
+    char = "0"
+    integer = int(number)
+    if 0 <= integer <= 9:
+        char = chr(integer + 48)
+    elif 10 <= integer <= 55:
+        char = chr(integer + 55)
+    return char 
+
+
+def _convert_char_to_number(char):
+    ord_val = ord(char)
+    number = 0
+    if 48 <= ord_val <= 57:
+        number = ord_val - 48
+    elif 65 <= ord_val <= 90:
+        number = ord_val - 55
+    return number 
+
 
 def convert_to_base_10(string, base):
     # example: "11011",2 = 1*2^4 + 1*2^3 + 0*2^2 + 1*2^1 + 1*2^0
     result =  0
     for index, char in enumerate(string):
+        number = _convert_char_to_number(char) 
         exponent = len(string) - index - 1
-        result += int(char) * math.pow(base, exponent)
+        result += number * math.pow(base, exponent)
     return result
 
 def convert_from_base_10(number, base):
     # example: 100,2 = (100 // 64) + ((100 % 64) // 32) + ((100 % 64) % 32) + (((100 % 64) % 32) % 16) // 8) ...
-    print("convert_from_base_10")
+    # example: 100,16 = (100 % 16^1) + (100 - (100 % 16)) % 16^2 ...
+    result =  ""
+    left = int(number)
+    index = 0
+    base_exp = 0
+    while base_exp < left:
+        index += 1
+        base_exp = math.pow(int(base), index)
+    while left > 0:
+        if base_exp <= left:
+            char_num = left // base_exp
+            result += _convert_number_to_char(char_num)
+            left -= char_num * base_exp
+        else:
+            result += _convert_number_to_char(0)
+        index -= 1
+        base_exp = math.pow(int(base), index)
+    return result

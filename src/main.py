@@ -13,6 +13,12 @@ from src import timer
 
 def execute():
     cmd = args.CommandHandler()
+    if cmd.is_command("convert_from_base_10"):
+        timer.run_timed_result(
+            base.convert_from_base_10, 
+            cmd.arg(2, "27"), 
+            int(cmd.arg(3, "2"))
+        )
     if cmd.is_command("convert_to_base_10"):
         timer.run_timed_result(
             base.convert_to_base_10, 
