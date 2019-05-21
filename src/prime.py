@@ -11,8 +11,3 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
-
-
-@timer.print_time_dec
-def print_is_prime(n):
-    print(f"is_prime({n})={is_prime(n)}")

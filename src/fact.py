@@ -16,22 +16,12 @@ def is_factorial(n):
     return result
 
 
-@timer.print_time_dec
-def print_is_factorial(n):
-    print(f"is_factorial({n}) = {is_factorial(n)}")
-
-
 def get_factors(n):
     factors = []
     for i in range(1, n):
         if n % i == 0:
             factors.append(i)
     return factors
-
-
-@timer.print_time_dec
-def print_get_factors(n):
-    print(f"factors of {n} = {get_factors(n)}")
 
 
 def get_factorial(n):
@@ -42,8 +32,3 @@ def get_factorial(n):
         for i in range(2, n):
             result *= i
     return result
-
-
-@timer.print_time_dec
-def print_get_factorial(n):
-    print(f"get_factorial({n}) = {get_factorial(n)}")

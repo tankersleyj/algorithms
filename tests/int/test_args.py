@@ -6,7 +6,7 @@ from src import args
 class TestArgs(unittest.TestCase):
 
     def test_args_CommandHandler(self):
-        print("test args CommandHandler")
+        # print("test args CommandHandler")
         cmd = args.CommandHandler()
         self.assertEqual(cmd.is_command('discover'), True, "is_command")
         self.assertEqual(cmd._commands, ['discover'], "_commands")

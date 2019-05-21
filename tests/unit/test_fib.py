@@ -7,9 +7,11 @@ from src import timer
 class TestFib(unittest.TestCase):
 
     def test_fib_for(self):
-        print("test fib for")
-        self.assertEqual(timer.run_timed(fib.fib_for, 10), 55, 'fib_for')
+        actual = timer.run_timed_result(fib.fib_for, 10)
+        expected = 55
+        self.assertEqual(actual, expected, 'fib_for')
 
     def test_fib_rec(self):
-        print("test fib rec")
-        self.assertEqual(timer.run_timed(fib.fib_rec, 10), 55, 'fib_rec')
+        actual = timer.run_timed_result(fib.fib_rec, 10)
+        expected = 55
+        self.assertEqual(actual, expected, 'fib_rec')
