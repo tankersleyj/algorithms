@@ -42,10 +42,12 @@ def convert_from_base_10(number, base):
         index += 1
         base_exp = math.pow(int(base), index)
     while left > 0:
-        if base_exp < left:
+        if base_exp <= left:
             char_num = left // base_exp
             result += _convert_number_to_char(char_num)
             left -= char_num * base_exp
+        else:
+            result += _convert_number_to_char(0)
         index -= 1
         base_exp = math.pow(int(base), index)
     return result

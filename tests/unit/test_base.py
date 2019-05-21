@@ -16,9 +16,9 @@ class TestBase(unittest.TestCase):
         self.assertEqual(actual, expected, "convert_to_base_10")
 
     def test_convert_from_base_10(self):
-        # actual = timer.run_timed_result(base.convert_from_base_10, 27, 2)
-        # expected = "11011"
-        # self.assertEqual(actual, expected, "convert_from_base_10")
+        actual = timer.run_timed_result(base.convert_from_base_10, 27, 2)
+        expected = "011011"
+        self.assertEqual(actual, expected, "convert_from_base_10")
         actual = timer.run_timed_result(base.convert_from_base_10, 255, 16)
-        expected = "FF"
+        expected = "0FF"
         self.assertEqual(actual, expected, "convert_to_base_10")
