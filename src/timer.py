@@ -37,7 +37,7 @@ def run_timed_result(func, *args, **kwargs):
     return result
 
 
-def print_time_result_dec(func):
+def print_timed_result_dec(func):
     # example: result = decorated_func()
     def decorator(*args, **kwargs):
         begin = time.time()
@@ -117,4 +117,3 @@ def get_time_dec(func):
         time_dict = {"begin":begin, "end":time.time()}
         return result, time_dict
     return decorator
-
