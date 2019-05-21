@@ -7,5 +7,6 @@ from src import timer
 class TestPrime(unittest.TestCase):
 
     def test_is_prime(self):
-        print("test is_prime")
-        self.assertEqual(timer.run_timed(prime.is_prime, 11), True, 'is_prime')
+        actual = timer.run_timed_result(prime.is_prime, 11)
+        expected = True
+        self.assertEqual(actual, expected, 'is_prime')

@@ -2,6 +2,7 @@
 
 import sys
 from src import args
+from src import base
 from src import fact
 from src import fib
 from src import prime
@@ -10,6 +11,8 @@ from src import sort
 
 def execute():
     cmd = args.CommandHandler()
+    if cmd.is_command("convert_from_base"):
+        base.print(int(cmd.arg(2, 10)))
     if cmd.is_command("fib_for"):
         fib.print_fib_for(int(cmd.arg(2, 10)))
     if cmd.is_command("fib_rec"):
