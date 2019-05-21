@@ -14,8 +14,8 @@ def wait_time(seconds):
     return seconds
 
 
-@timer.print_time_result_dec
-def _print_time_result_dec(seconds):
+@timer.print_timed_result_dec
+def _print_timed_result_dec(seconds):
     time.sleep(seconds/100)
     return seconds
 
@@ -49,10 +49,10 @@ class TestTimer(unittest.TestCase):
         expected = 1
         self.assertEqual(actual, expected, 'run_timed_result')
 
-    def test_print_time_result_dec(self):
-        actual = _print_time_result_dec(1)
+    def test_print_timed_result_dec(self):
+        actual = _print_timed_result_dec(1)
         expected = 1
-        self.assertEqual(actual, expected, 'print_time_result_dec')
+        self.assertEqual(actual, expected, 'print_timed_result_dec')
 
     # --------          --------
     # --------  Result  --------

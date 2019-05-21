@@ -4,13 +4,7 @@ import unittest
 from src import timer
 
 
-@timer.print_time_dec
-def wait(seconds):
-    time.sleep(seconds)
-
-
-class TestTimer(unittest.TestCase):
+class TestSort(unittest.TestCase):
 
     def test_sort(self):
-        # print("test sort")
         self.assertEqual('foo'.upper(), 'FOO')

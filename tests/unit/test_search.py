@@ -1,8 +1,10 @@
 # MIT (c) jtankersley 2019-05-19
+import time
 import unittest
+from src import timer
 
 
-class TestUnit(unittest.TestCase):
+class TestSearch(unittest.TestCase):
 
-    def test_unit(self):
+    def test_search(self):
         self.assertEqual('foo'.upper(), 'FOO')
