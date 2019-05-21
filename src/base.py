@@ -20,7 +20,6 @@ def convert_to_base_10(string, base):
     result =  0
     for index, char in enumerate(string):
         exponent = len(string) - index - 1
-        # print(f"index:{index}, char:{int(char)}, exponent:{exponent}, place:{round(math.pow(base, exponent))}")
         result += int(char) * math.pow(base, exponent)
     return result
 
