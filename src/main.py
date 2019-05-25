@@ -25,16 +25,21 @@ def execute():
             cmd.arg(2, "11011"), 
             int(cmd.arg(3, "2"))
         )
-    if cmd.is_command("fib_for"):
-        timer.run_timed_result(
-            fib.fib_for, 
-            int(cmd.arg(2, 10))
-        )
     if cmd.is_command("fib_rec"):
        timer.run_timed_result(
             fib.fib_rec, 
-            int(cmd.arg(2, 10))
+            int(cmd.arg(2, 16))
         )    
+    if cmd.is_command("fib_it"):
+        timer.run_timed_result(
+            fib.fib_for, 
+            int(cmd.arg(2, 16))
+        )
+    if cmd.is_command("fib_for"):
+        timer.run_timed_result(
+            fib.fib_for, 
+            int(cmd.arg(2, 16))
+        )
     if cmd.is_command("get_factors"):
         timer.run_timed_result(
             fact.get_factors,
