@@ -25,19 +25,19 @@ def execute():
             cmd.arg(2, "11011"), 
             int(cmd.arg(3, "2"))
         )
-    if cmd.is_command("fib_rec"):
+    if cmd.is_command("fib_recursive"):
        timer.run_timed_result(
-            fib.fib_rec, 
+            fib.fib_recursive, 
             int(cmd.arg(2, 16))
         )    
-    if cmd.is_command("fib_it"):
+    if cmd.is_command("fib_array"):
         timer.run_timed_result(
-            fib.fib_for, 
+            fib.fib_array, 
             int(cmd.arg(2, 16))
         )
-    if cmd.is_command("fib_for"):
+    if cmd.is_command("fib_vars"):
         timer.run_timed_result(
-            fib.fib_for, 
+            fib.fib_vars, 
             int(cmd.arg(2, 16))
         )
     if cmd.is_command("get_factors"):
