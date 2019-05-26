@@ -10,6 +10,8 @@ from src import search
 from src import sort
 from src import timer
 
+unordered_list = [10,35,20,31,4,6,5,34,15,2,12,25,3,30,32,33,1,7,36,8]
+
 
 def execute():
     cmd = args.CommandHandler()
@@ -72,17 +74,25 @@ def execute():
         timer.run_timed_result(
             search.search_tree
         )
+    if cmd.is_command("sort_bubble"):
+        timer.run_timed_result(
+            sort.print_sort_bubble,
+            int(cmd.arg(2, unordered_list)
+        )
     if cmd.is_command("sort_instant"):
         timer.run_timed_result(
-            sort.print_sort_instant
+            sort.print_sort_instant,
+            int(cmd.arg(2, unordered_list)
         )
     if cmd.is_command("sort_merge"):
         timer.run_timed_result(
-            sort.print_sort_merge
+            sort.print_sort_merge,
+            int(cmd.arg(2, unordered_list)
         )
     if cmd.is_command("sort_quick"):
         timer.run_timed_result(
-            sort.print_sort_quick
+            sort.print_sort_quick,
+            int(cmd.arg(2, unordered_list)
         )
     if not cmd.is_handled():
         help_text = cmd.get_help(
