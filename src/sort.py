@@ -7,28 +7,24 @@ def _swap_list_items(list, a, b):
     list[b] = saved
 
 
-def sort_bubble(unordered_list = []):
-    ordered_list = unordered_list.copy()
-    for i in range(0, len(unordered_list)):
-        for j in range(i, len(unordered_list)):
-            if ordered_list[i] > ordered_list[j]:
-                _swap_list_items(ordered_list, i, j)
-    return ordered_list
+def sort_bubble(list = []):
+    for i in range(0, len(list)):
+        for j in range(i, len(list)):
+            if list[i] > list[j]:
+                _swap_list_items(list, i, j)
+    return list
 
 
-def sort_instant(unordered_list = []):
-    ordered_list = unordered_list.copy()
-    print("instant")
-    return ordered_list
+def sort_instant(list = []):
+    list.sort()
+    return list
 
 
-def sort_merge(unordered_list = []):
-    ordered_list = unordered_list.copy()
-    print("merge")
-    return ordered_list
+def sort_merge(list = []):
+    list.sort()
+    return list
 
 
-def sort_quick(unordered_list = []):
-    ordered_list = unordered_list.copy()
-    print("quick")
-    return ordered_list
+def sort_quick(list = []):
+    list.sort()
+    return list
