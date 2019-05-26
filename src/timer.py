@@ -25,7 +25,7 @@ def print_timed_result(time_dict, result, func_name, *args, **kwargs):
     end = time_dict.get("end", 0)
     end_string = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end))
     params = _get_params_string(*args, **kwargs)
-    print(f"{func_name}({params}) = {result}; ({round(end - begin, 4)} seconds)")
+    print(f"{func_name}({params}) = {result}; ({format(end - begin, '.4f')} seconds)")
 
 
 def run_timed_result(func, *args, **kwargs):
@@ -86,7 +86,7 @@ def print_time(func_name, time_dict):
     begin_string = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(begin))
     end = time_dict.get("end", 0)
     end_string = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end))
-    print(f"{func_name}() ran {round(end - begin, 4)} seconds from {begin_string} to {end_string}")
+    print(f"{func_name}() ran {format(end - begin, '.4f')} seconds from {begin_string} to {end_string}")
 
 
 def run_timed(func, *args, **kwargs):

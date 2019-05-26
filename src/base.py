@@ -31,6 +31,7 @@ def convert_to_base_10(string, base):
         result += number * math.pow(base, exponent)
     return result
 
+
 def convert_from_base_10(number, base):
     # example: 100,2 = (100 // 64) + ((100 % 64) // 32) + ((100 % 64) % 32) + (((100 % 64) % 32) % 16) // 8) ...
     # example: 100,16 = (100 % 16^1) + (100 - (100 % 16)) % 16^2 ...

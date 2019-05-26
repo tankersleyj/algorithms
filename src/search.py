@@ -8,5 +8,6 @@ def search_binary():
 def search_hash():
     print("hash")
 
+
 def search_tree():
     print("tree")

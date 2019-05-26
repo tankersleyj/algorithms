@@ -6,12 +6,17 @@ from src import timer
 
 class TestFib(unittest.TestCase):
 
-    def test_fib_for(self):
-        actual = timer.run_timed_result(fib.fib_for, 10)
-        expected = 55
-        self.assertEqual(actual, expected, 'fib_for')
+    def test_fib_recursive(self):
+        actual = timer.run_timed_result(fib.fib_recursive, 16)
+        expected = 987
+        self.assertEqual(actual, expected, 'fib_recursive')
 
-    def test_fib_rec(self):
-        actual = timer.run_timed_result(fib.fib_rec, 10)
-        expected = 55
-        self.assertEqual(actual, expected, 'fib_rec')
+    def test_fib_array(self):
+        actual = timer.run_timed_result(fib.fib_array, 16)
+        expected = 987
+        self.assertEqual(actual, expected, 'fib_array')
+
+    def test_fib_vars(self):
+        actual = timer.run_timed_result(fib.fib_vars, 16)
+        expected = 987
+        self.assertEqual(actual, expected, 'fib_vars')
