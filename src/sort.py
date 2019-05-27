@@ -14,11 +14,6 @@ def sort_bubble(list):
     return list
 
 
-def sort_instant(list):
-    list.sort()
-    return list
-
-
 def sort_merge(list):
 
     def _merge(list, low, mid, high):
@@ -53,6 +48,6 @@ def sort_merge(list):
     return list
 
 
-def sort_quick(list):
+def sort_python(list):
     list.sort()
     return list
