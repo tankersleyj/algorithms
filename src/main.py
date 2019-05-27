@@ -10,7 +10,8 @@ from src import search
 from src import sort
 from src import timer
 
-unordered_list = "10,35,20,31,4,6,5,34,15,2,12,25,3,30,32,33,1,7,36,8"
+ordered_list = "1,2,3,4,5,6,7,8,10,12,15,20,25,30,31,32"
+unordered_list = "10,20,31,4,6,5,15,2,12,25,3,30,32,1,7,8"
 
 
 def execute():
@@ -30,58 +31,47 @@ def execute():
     if cmd.is_command("fib_recursive"):
        timer.run_timed_result(
             fib.fib_recursive, 
-            int(cmd.arg(2, 16))
+            int(cmd.arg(2, "16"))
         )    
     if cmd.is_command("fib_array"):
         timer.run_timed_result(
             fib.fib_array, 
-            int(cmd.arg(2, 16))
+            int(cmd.arg(2, "16"))
         )
     if cmd.is_command("fib_vars"):
         timer.run_timed_result(
             fib.fib_vars, 
-            int(cmd.arg(2, 16))
+            int(cmd.arg(2, "16"))
         )
     if cmd.is_command("get_factors"):
         timer.run_timed_result(
             fact.get_factors,
-            int(cmd.arg(2, 121))
+            int(cmd.arg(2, "121"))
         )
     if cmd.is_command("get_factorial"):
         timer.run_timed_result(
             fact.get_factorial,
-            int(cmd.arg(2, 10))
+            int(cmd.arg(2, "10"))
         )
     if cmd.is_command("is_factorial"):
         timer.run_timed_result(
             fact.is_factorial,
-            int(cmd.arg(2, 87178291200))
+            int(cmd.arg(2, "87178291200"))
         )
     if cmd.is_command("is_prime"):
         timer.run_timed_result(
             prime.is_prime,
-            int(cmd.arg(2, 11))
+            int(cmd.arg(2, "11"))
         )
     if cmd.is_command("search_binary"):
         timer.run_timed_result(
-            search.search_binary
-        )
-    if cmd.is_command("search_hash"):
-        timer.run_timed_result(
-            search.search_hash
-        )
-    if cmd.is_command("search_tree"):
-        timer.run_timed_result(
-            search.search_tree
+            search.search_binary,
+            cmd.arg(2, ordered_list).split(","),
+            cmd.arg(3, "10")
         )
     if cmd.is_command("sort_bubble"):
         timer.run_timed_result(
             sort.print_sort_bubble,
-            cmd.arg(2, unordered_list).split(",")
-        )
-    if cmd.is_command("sort_instant"):
-        timer.run_timed_result(
-            sort.sort_instant,
             cmd.arg(2, unordered_list).split(",")
         )
     if cmd.is_command("sort_merge"):
@@ -89,9 +79,9 @@ def execute():
             sort.sort_merge,
             cmd.arg(2, unordered_list).split(",")
         )
-    if cmd.is_command("sort_quick"):
+    if cmd.is_command("sort_python"):
         timer.run_timed_result(
-            sort.sort_quick,
+            sort.sort_python,
             cmd.arg(2, unordered_list).split(",")
         )
     if not cmd.is_handled():
