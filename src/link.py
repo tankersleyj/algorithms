@@ -18,11 +18,18 @@ class DoubleList():
 
     def __str__(self):
         string = ""
-        node = self.head
-        while node:
-            string += f"{str(node.data)},"
-            node = node.right
-        return string[:len(string) -1] if len(string) > 0 else ""
+        if self.head:
+            node = self.head
+            while node:
+                string += f"{str(node.data)},"
+                node = node.right
+            return string[:len(string) -1] if len(string) > 0 else ""
+        if self.tail:
+            node = self.tail
+            while node:
+                string = f"{str(node.data)},{string}"
+                node = node.left
+            return string[:len(string) -1] if len(string) > 0 else ""
 
     def addHead(self, data):
         if self.head:
@@ -41,6 +48,25 @@ class DoubleList():
             if self.head.right:
                 self.head = self.head.right
                 self.head.left = None
+            return node.data
+
+    def addTail(self, data):
+        if self.tail:
+            self.tail.right = DoubleNode(data, self.tail, None)
+            self.tail = self.tail.right
+        else:
+            self.tail = DoubleNode(data)
+
+    def peekTail(self):
+        if self.tail:
+            return self.tail.data
+
+    def popTail(self):
+        if self.tail:
+            node = self.tail
+            if self.tail.left:
+                self.tail = self.tail.left
+                self.tail.right = None
             return node.data
 
     # def addTail(self, data):
