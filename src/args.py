@@ -23,7 +23,7 @@ class CommandHandler():
     def arg(self, n, default):
         return get_arg(n, default)
 
-    def is_command(self, command):
+    def isCommand(self, command):
         if command not in self._commands:
             self._commands.append(command)
         if get_arg(1, "") == command:
@@ -32,13 +32,13 @@ class CommandHandler():
         else:
             return False
 
-    def is_handled(self):
+    def isHandled(self):
         if self._command in self._commands:
             return True
         else:
             return False
 
-    def get_help(self, title="", format="", example="", commands=[]):
+    def getHelp(self, title="", format="", example="", commands=[]):
         help_text = ""
         if len(title) > 0:
             help_text += f"{title}\n"

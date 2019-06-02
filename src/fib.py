@@ -3,7 +3,7 @@ from src import timer
 
 
 def fib_recursive(n):
-    if n < 0:
+    if n < 1:
         return 0
     if n == 1:
         return 1
@@ -26,3 +26,9 @@ def fib_vars(n):
             n_m1 = n_m2
             n_m2 = n_m2 + n_m0
     return n_m1 + n_m2
+
+def fib_var2(n):
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a+b
+    return a

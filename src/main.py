@@ -16,76 +16,81 @@ unordered_list = "10,20,31,4,6,5,15,2,12,25,3,30,32,1,7,8"
 
 def execute():
     cmd = args.CommandHandler()
-    if cmd.is_command("convert_from_base_10"):
-        timer.run_timed_result(
+    if cmd.isCommand("convert_from_base_10"):
+        timer.runTimedResult(
             base.convert_from_base_10, 
             cmd.arg(2, "27"), 
             int(cmd.arg(3, "2"))
         )
-    if cmd.is_command("convert_to_base_10"):
-        timer.run_timed_result(
+    if cmd.isCommand("convert_to_base_10"):
+        timer.runTimedResult(
             base.convert_to_base_10, 
             cmd.arg(2, "11011"), 
             int(cmd.arg(3, "2"))
         )
-    if cmd.is_command("fib_recursive"):
-       timer.run_timed_result(
+    if cmd.isCommand("fib_recursive"):
+       timer.runTimedResult(
             fib.fib_recursive, 
             int(cmd.arg(2, "16"))
         )    
-    if cmd.is_command("fib_array"):
-        timer.run_timed_result(
+    if cmd.isCommand("fib_array"):
+        timer.runTimedResult(
             fib.fib_array, 
             int(cmd.arg(2, "16"))
         )
-    if cmd.is_command("fib_vars"):
-        timer.run_timed_result(
+    if cmd.isCommand("fib_vars"):
+        timer.runTimedResult(
             fib.fib_vars, 
             int(cmd.arg(2, "16"))
         )
-    if cmd.is_command("get_factors"):
-        timer.run_timed_result(
+    if cmd.isCommand("fib_var2"):
+        timer.runTimedResult(
+            fib.fib_var2, 
+            int(cmd.arg(2, "16"))
+        )
+    if cmd.isCommand("get_factors"):
+        timer.runTimedResult(
             fact.get_factors,
             int(cmd.arg(2, "121"))
         )
-    if cmd.is_command("get_factorial"):
-        timer.run_timed_result(
+    if cmd.isCommand("get_factorial"):
+        timer.runTimedResult(
             fact.get_factorial,
             int(cmd.arg(2, "10"))
         )
-    if cmd.is_command("is_factorial"):
-        timer.run_timed_result(
+    if cmd.isCommand("is_factorial"):
+        timer.runTimedResult(
             fact.is_factorial,
             int(cmd.arg(2, "87178291200"))
         )
-    if cmd.is_command("is_prime"):
-        timer.run_timed_result(
+    if cmd.isCommand("is_prime"):
+        timer.runTimedResult(
             prime.is_prime,
             int(cmd.arg(2, "11"))
         )
-    if cmd.is_command("search_binary"):
-        timer.run_timed_result(
+    if cmd.isCommand("search_binary"):
+        timer.runTimedResult(
             search.search_binary,
             cmd.arg(2, ordered_list).split(","),
             cmd.arg(3, "10")
         )
-    if cmd.is_command("sort_bubble"):
-        timer.run_timed_result(
+    if cmd.isCommand("sort_bubble"):
+        timer.runTimedResult(
             sort.print_sort_bubble,
             cmd.arg(2, unordered_list).split(",")
         )
-    if cmd.is_command("sort_merge"):
-        timer.run_timed_result(
+    if cmd.isCommand("sort_merge"):
+        timer.runTimedResult(
             sort.sort_merge,
             cmd.arg(2, unordered_list).split(",")
         )
-    if cmd.is_command("sort_python"):
-        timer.run_timed_result(
+    if cmd.isCommand("sort_python"):
+        timer.runTimedResult(
             sort.sort_python,
             cmd.arg(2, unordered_list).split(",")
         )
-    if not cmd.is_handled():
-        help_text = cmd.get_help(
+    if not cmd.isHandled():
+        help_text = cmd.getHelp(
             "---- CS Algorithms in Python, MIT, (c) 2019, JTankersley ----",
             "run <function> [<value>]",
             "./run.sh get_factors 40302"
