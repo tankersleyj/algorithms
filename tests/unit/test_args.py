@@ -5,8 +5,8 @@ from src import args
 
 class TestArg(unittest.TestCase):
 
-    def test_get_args(self):
-        self.assertGreater(len(args.get_args()), 0, "get_args")
+    def test_getArgs(self):
+        self.assertGreater(len(args.getArgs()), 0, "getArgs")
 
-    def test_get_arg(self):
-        self.assertEqual(args.get_arg(1), 'discover', "get_arg(1)")
+    def test_getArg(self):
+        self.assertEqual(args.getArg(1), 'discover', "getArg(1)")

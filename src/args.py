@@ -2,14 +2,14 @@
 import sys
 
 
-def get_arg(n, default=None):
+def getArg(n, default=None):
     if len(sys.argv) > n:
         return sys.argv[n]
     else:
         return default
 
 
-def get_args():
+def getArgs():
     return sys.argv
 
 
@@ -21,24 +21,24 @@ class CommandHandler():
         self._command = ""
 
     def arg(self, n, default):
-        return get_arg(n, default)
+        return getArg(n, default)
 
-    def is_command(self, command):
+    def isCommand(self, command):
         if command not in self._commands:
             self._commands.append(command)
-        if get_arg(1, "") == command:
+        if getArg(1, "") == command:
             self._command = command
             return True
         else:
             return False
 
-    def is_handled(self):
+    def isHandled(self):
         if self._command in self._commands:
             return True
         else:
             return False
 
-    def get_help(self, title="", format="", example="", commands=[]):
+    def getHelp(self, title="", format="", example="", commands=[]):
         help_text = ""
         if len(title) > 0:
             help_text += f"{title}\n"

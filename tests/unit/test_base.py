@@ -7,18 +7,18 @@ from src import timer
 
 class TestBase(unittest.TestCase):
 
-    def test_convert_to_base_10(self):
-        actual = timer.run_timed_result(base.convert_to_base_10, "11011", 2)
+    def test_convertToBase10(self):
+        actual = timer.runTimedResult(base.convertToBase10, "11011", 2)
         expected = 27
-        self.assertEqual(actual, expected, "convert_to_base_10")
-        actual = timer.run_timed_result(base.convert_to_base_10, "FF", 16)
+        self.assertEqual(actual, expected, "convertToBase10")
+        actual = timer.runTimedResult(base.convertToBase10, "FF", 16)
         expected = 255
-        self.assertEqual(actual, expected, "convert_to_base_10")
+        self.assertEqual(actual, expected, "convertToBase10")
 
-    def test_convert_from_base_10(self):
-        actual = timer.run_timed_result(base.convert_from_base_10, 27, 2)
+    def test_convertFromBase10(self):
+        actual = timer.runTimedResult(base.convertFromBase10, 27, 2)
         expected = "011011"
-        self.assertEqual(actual, expected, "convert_from_base_10")
-        actual = timer.run_timed_result(base.convert_from_base_10, 255, 16)
+        self.assertEqual(actual, expected, "convertFromBase10")
+        actual = timer.runTimedResult(base.convertFromBase10, 255, 16)
         expected = "0FF"
-        self.assertEqual(actual, expected, "convert_to_base_10")
+        self.assertEqual(actual, expected, "convertToBase10")

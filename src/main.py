@@ -16,78 +16,83 @@ unordered_list = "10,20,31,4,6,5,15,2,12,25,3,30,32,1,7,8"
 
 def execute():
     cmd = args.CommandHandler()
-    if cmd.is_command("convert_from_base_10"):
-        timer.run_timed_result(
-            base.convert_from_base_10, 
+    if cmd.isCommand("convertFromBase10"):
+        timer.runTimedResult(
+            base.convertFromBase10, 
             cmd.arg(2, "27"), 
             int(cmd.arg(3, "2"))
         )
-    if cmd.is_command("convert_to_base_10"):
-        timer.run_timed_result(
-            base.convert_to_base_10, 
+    if cmd.isCommand("convertToBase10"):
+        timer.runTimedResult(
+            base.convertToBase10, 
             cmd.arg(2, "11011"), 
             int(cmd.arg(3, "2"))
         )
-    if cmd.is_command("fib_recursive"):
-       timer.run_timed_result(
-            fib.fib_recursive, 
+    if cmd.isCommand("getFib_recursive"):
+       timer.runTimedResult(
+            fib.getFib_recursive, 
             int(cmd.arg(2, "16"))
         )    
-    if cmd.is_command("fib_array"):
-        timer.run_timed_result(
-            fib.fib_array, 
+    if cmd.isCommand("getFib_array"):
+        timer.runTimedResult(
+            fib.getFib_array, 
             int(cmd.arg(2, "16"))
         )
-    if cmd.is_command("fib_vars"):
-        timer.run_timed_result(
-            fib.fib_vars, 
+    if cmd.isCommand("getFib_vars"):
+        timer.runTimedResult(
+            fib.getFib_vars, 
             int(cmd.arg(2, "16"))
         )
-    if cmd.is_command("get_factors"):
-        timer.run_timed_result(
-            fact.get_factors,
+    if cmd.isCommand("getFib_var2"):
+        timer.runTimedResult(
+            fib.getFib_var2, 
+            int(cmd.arg(2, "16"))
+        )
+    if cmd.isCommand("getFactors"):
+        timer.runTimedResult(
+            fact.getFactors,
             int(cmd.arg(2, "121"))
         )
-    if cmd.is_command("get_factorial"):
-        timer.run_timed_result(
-            fact.get_factorial,
+    if cmd.isCommand("getFactorial"):
+        timer.runTimedResult(
+            fact.getFactorial,
             int(cmd.arg(2, "10"))
         )
-    if cmd.is_command("is_factorial"):
-        timer.run_timed_result(
-            fact.is_factorial,
+    if cmd.isCommand("isFactorial"):
+        timer.runTimedResult(
+            fact.isFactorial,
             int(cmd.arg(2, "87178291200"))
         )
-    if cmd.is_command("is_prime"):
-        timer.run_timed_result(
-            prime.is_prime,
+    if cmd.isCommand("isPrime"):
+        timer.runTimedResult(
+            prime.isPrime,
             int(cmd.arg(2, "11"))
         )
-    if cmd.is_command("search_binary"):
-        timer.run_timed_result(
-            search.search_binary,
+    if cmd.isCommand("binarySearch"):
+        timer.runTimedResult(
+            search.binarySearch,
             cmd.arg(2, ordered_list).split(","),
             cmd.arg(3, "10")
         )
-    if cmd.is_command("sort_bubble"):
-        timer.run_timed_result(
-            sort.print_sort_bubble,
+    if cmd.isCommand("bubbleSort"):
+        timer.runTimedResult(
+            sort.print_bubbleSort,
             cmd.arg(2, unordered_list).split(",")
         )
-    if cmd.is_command("sort_merge"):
-        timer.run_timed_result(
-            sort.sort_merge,
+    if cmd.isCommand("mergeSort"):
+        timer.runTimedResult(
+            sort.mergeSort,
             cmd.arg(2, unordered_list).split(",")
         )
-    if cmd.is_command("sort_python"):
-        timer.run_timed_result(
-            sort.sort_python,
+    if cmd.isCommand("pythonSort"):
+        timer.runTimedResult(
+            sort.pythonSort,
             cmd.arg(2, unordered_list).split(",")
         )
-    if not cmd.is_handled():
-        help_text = cmd.get_help(
+    if not cmd.isHandled():
+        help_text = cmd.getHelp(
             "---- CS Algorithms in Python, MIT, (c) 2019, JTankersley ----",
             "run <function> [<value>]",
-            "./run.sh get_factors 40302"
+            "./run.sh getFactors 40302"
         )
         print(f"{help_text}")
