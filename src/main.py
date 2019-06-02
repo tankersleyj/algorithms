@@ -16,83 +16,83 @@ unordered_list = "10,20,31,4,6,5,15,2,12,25,3,30,32,1,7,8"
 
 def execute():
     cmd = args.CommandHandler()
-    if cmd.isCommand("convert_from_base_10"):
+    if cmd.isCommand("convertFromBase10"):
         timer.runTimedResult(
-            base.convert_from_base_10, 
+            base.convertFromBase10, 
             cmd.arg(2, "27"), 
             int(cmd.arg(3, "2"))
         )
-    if cmd.isCommand("convert_to_base_10"):
+    if cmd.isCommand("convertToBase10"):
         timer.runTimedResult(
-            base.convert_to_base_10, 
+            base.convertToBase10, 
             cmd.arg(2, "11011"), 
             int(cmd.arg(3, "2"))
         )
-    if cmd.isCommand("fib_recursive"):
+    if cmd.isCommand("getFib_recursive"):
        timer.runTimedResult(
-            fib.fib_recursive, 
+            fib.getFib_recursive, 
             int(cmd.arg(2, "16"))
         )    
-    if cmd.isCommand("fib_array"):
+    if cmd.isCommand("getFib_array"):
         timer.runTimedResult(
-            fib.fib_array, 
+            fib.getFib_array, 
             int(cmd.arg(2, "16"))
         )
-    if cmd.isCommand("fib_vars"):
+    if cmd.isCommand("getFib_vars"):
         timer.runTimedResult(
-            fib.fib_vars, 
+            fib.getFib_vars, 
             int(cmd.arg(2, "16"))
         )
-    if cmd.isCommand("fib_var2"):
+    if cmd.isCommand("getFib_var2"):
         timer.runTimedResult(
-            fib.fib_var2, 
+            fib.getFib_var2, 
             int(cmd.arg(2, "16"))
         )
-    if cmd.isCommand("get_factors"):
+    if cmd.isCommand("getFactors"):
         timer.runTimedResult(
-            fact.get_factors,
+            fact.getFactors,
             int(cmd.arg(2, "121"))
         )
-    if cmd.isCommand("get_factorial"):
+    if cmd.isCommand("getFactorial"):
         timer.runTimedResult(
-            fact.get_factorial,
+            fact.getFactorial,
             int(cmd.arg(2, "10"))
         )
-    if cmd.isCommand("is_factorial"):
+    if cmd.isCommand("isFactorial"):
         timer.runTimedResult(
-            fact.is_factorial,
+            fact.isFactorial,
             int(cmd.arg(2, "87178291200"))
         )
-    if cmd.isCommand("is_prime"):
+    if cmd.isCommand("isPrime"):
         timer.runTimedResult(
-            prime.is_prime,
+            prime.isPrime,
             int(cmd.arg(2, "11"))
         )
-    if cmd.isCommand("search_binary"):
+    if cmd.isCommand("binarySearch"):
         timer.runTimedResult(
-            search.search_binary,
+            search.binarySearch,
             cmd.arg(2, ordered_list).split(","),
             cmd.arg(3, "10")
         )
-    if cmd.isCommand("sort_bubble"):
+    if cmd.isCommand("bubbleSort"):
         timer.runTimedResult(
-            sort.print_sort_bubble,
+            sort.print_bubbleSort,
             cmd.arg(2, unordered_list).split(",")
         )
-    if cmd.isCommand("sort_merge"):
+    if cmd.isCommand("mergeSort"):
         timer.runTimedResult(
-            sort.sort_merge,
+            sort.mergeSort,
             cmd.arg(2, unordered_list).split(",")
         )
-    if cmd.isCommand("sort_python"):
+    if cmd.isCommand("pythonSort"):
         timer.runTimedResult(
-            sort.sort_python,
+            sort.pythonSort,
             cmd.arg(2, unordered_list).split(",")
         )
     if not cmd.isHandled():
         help_text = cmd.getHelp(
             "---- CS Algorithms in Python, MIT, (c) 2019, JTankersley ----",
             "run <function> [<value>]",
-            "./run.sh get_factors 40302"
+            "./run.sh getFactors 40302"
         )
         print(f"{help_text}")

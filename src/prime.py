@@ -2,7 +2,7 @@
 from src import timer
 
 
-def is_prime(n):
+def isPrime(n):
     if n == 1:
         return True
     if n == 2:

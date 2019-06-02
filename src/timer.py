@@ -118,7 +118,7 @@ def printTime_dec(func):
     return decorator
 
 
-def get_time_dec(func):
+def getTime_dec(func):
     # example: result, time_dict = decorated_func()
     def decorator(*args, **kwargs):
         begin = time.time()

@@ -13,6 +13,6 @@ class TestSort(unittest.TestCase):
         dll.addHead(3)
         # print(f"{str(dll)}")
         # print(f"{dll.toString()}")
-        # actual = timer.runTimedResult(sort.sort_bubble, unordered_list.copy())
+        # actual = timer.runTimedResult(sort.bubbleSort, unordered_list.copy())
         # expected = ordered_list
-        # self.assertEqual(actual, expected, 'sort_bubble')
+        # self.assertEqual(actual, expected, 'bubbleSort')
