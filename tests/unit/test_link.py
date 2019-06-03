@@ -47,11 +47,3 @@ class TestSort(unittest.TestCase):
         actual = str(dll)
         expected = "1,2"
         self.assertEqual(actual, expected, "test_link_dllTail.4")
-
-        # print(f"dll.Tail.data={dll.head.data}")
-        # print(f"dll={str(dll)}")
-        # print(f"{str(dll)}")
-        # print(f"{dll.toString()}")
-        # actual = timer.runTimedResult(sort.bubbleSort, unordered_link.copy())
-        # expected = ordered_link
-        # self.assertEqual(actual, expected, 'bubbleSort')
