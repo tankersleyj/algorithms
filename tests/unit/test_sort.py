@@ -9,17 +9,17 @@ unOrderedList = [10,20,31,4,6,5,15,2,12,25,3,30,32,1,7,8]
 
 class TestSort(unittest.TestCase):
 
-    def test_bubbleSort(self):
-        actual = timer.runTimedResult(sort.bubbleSort, unOrderedList.copy())
+    def test_bubble_sort(self):
+        actual = timer.run_timed_result(sort.bubble_sort, unOrderedList.copy())
         expected = orderedList
-        self.assertEqual(actual, expected, 'bubbleSort')
+        self.assertEqual(actual, expected, 'bubble_sort')
 
-    def test_mergeSort(self):
-        actual = timer.runTimedResult(sort.mergeSort, unOrderedList.copy())
+    def test_merge_sort(self):
+        actual = timer.run_timed_result(sort.merge_sort, unOrderedList.copy())
         expected = orderedList
-        self.assertEqual(actual, expected, 'mergeSort')
+        self.assertEqual(actual, expected, 'merge_sort')
 
-    def test_pythonSort(self):
-        actual = timer.runTimedResult(sort.pythonSort, unOrderedList.copy())
+    def test_python_sort(self):
+        actual = timer.run_timed_result(sort.python_sort, unOrderedList.copy())
         expected = orderedList
-        self.assertEqual(actual, expected, 'pythonSort')
+        self.assertEqual(actual, expected, 'python_sort')

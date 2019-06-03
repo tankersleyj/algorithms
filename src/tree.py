@@ -23,7 +23,7 @@ class BinaryTree():
 
     def __str__(self):
         """Print data in-order."""
-        return str(self.getInOrderList())
+        return str(self.get_in_order_list())
 
     def _add(self, data, node):
         if data < node.data:
@@ -43,23 +43,23 @@ class BinaryTree():
         else:
             self.root = BinaryNode(data)
 
-    def _getInOrderList(self, node):
+    def _get_in_order_list(self, node):
         if node:
             list = []
             if node.childLeft:
-                leftList = self._getInOrderList(node.childLeft)
+                leftList = self._get_in_order_list(node.childLeft)
                 list = [*list, *leftList]
             list = [*list, node.data]
             if node.childRight:
-                rightList = self._getInOrderList(node.childRight)
+                rightList = self._get_in_order_list(node.childRight)
                 list = [*list, *rightList]
             return list
         else:
             return None        
 
-    def getInOrderList(self):
+    def get_in_order_list(self):
         if self.root:
-            return self._getInOrderList(self.root)
+            return self._get_in_order_list(self.root)
         else:
             return []
 
@@ -86,7 +86,7 @@ class MultiBinaryTree():
 
     def __str__(self):
         """Print data in-order."""
-        return str(self.getInOrderList())
+        return str(self.get_in_order_list())
 
     def _add(self, data, node):
         if data == node.data:
@@ -108,23 +108,23 @@ class MultiBinaryTree():
         else:
             self.root = MultiBinaryNode(data)
 
-    def _getInOrderList(self, node):
+    def _get_in_order_list(self, node):
         if node:
             list = []
             if node.childLeft:
-                leftList = self._getInOrderList(node.childLeft)
+                leftList = self._get_in_order_list(node.childLeft)
                 list = [*list, *leftList]
             for n in range(node.dataCount):
                 list = [*list, node.data]
             if node.childRight:
-                rightList = self._getInOrderList(node.childRight)
+                rightList = self._get_in_order_list(node.childRight)
                 list = [*list, *rightList]
             return list
         else:
             return None        
 
-    def getInOrderList(self):
+    def get_in_order_list(self):
         if self.root:
-            return self._getInOrderList(self.root)
+            return self._get_in_order_list(self.root)
         else:
             return []

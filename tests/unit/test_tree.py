@@ -16,7 +16,7 @@ class TestSort(unittest.TestCase):
         bt = tree.BinaryTree()
         for n in unOrderedList:
             bt.add(n)
-        actual = bt.getInOrderList()
+        actual = bt.get_in_order_list()
         expected = orderedList
         self.assertEqual(actual, expected, "test_binaryTree.1")
 
@@ -24,14 +24,14 @@ class TestSort(unittest.TestCase):
         bt = tree.BinaryTree()
         for n in multiUnOrderedList:
             bt.add(n)
-        actual = bt.getInOrderList()
+        actual = bt.get_in_order_list()
         expected = orderedList
         self.assertEqual(actual, expected, "test_binaryTree.2")
 
-    def test_multiBinaryTree(self):
+    def test_MultiBinaryTree(self):
         mbt = tree.MultiBinaryTree()
         for n in multiUnOrderedList:
             mbt.add(n)
-        actual = mbt.getInOrderList()
+        actual = mbt.get_in_order_list()
         expected = multiOrderedList
         self.assertEqual(actual, expected, "test_multiBinaryTree")

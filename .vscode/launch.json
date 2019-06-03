@@ -5,25 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Module - getFactors(123450)",
+            "name": "Python: Module - get_factors(123450)",
             "type": "python",
             "request": "launch",
             "module": "src",
-            "args": ["getFactors", "12345"]
+            "args": ["get_factors", "12345"]
         },
         {
-            "name": "Python: Module - convertFromBase10(255, 16)",
+            "name": "Python: Module - convert_from_base_10(255, 16)",
             "type": "python",
             "request": "launch",
             "module": "src",
-            "args": ["convertFromBase10", "255", "16"]
+            "args": ["convert_from_base_10", "255", "16"]
         },
         {
-            "name": "Python: Module - convertFromBase10(27, 2)",
+            "name": "Python: Module - convert_from_base_10(27, 2)",
             "type": "python",
             "request": "launch",
             "module": "src",
-            "args": ["convertFromBase10", "27", "2"]
+            "args": ["convert_from_base_10", "27", "2"]
         }
     ]
 }

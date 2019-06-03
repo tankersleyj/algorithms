@@ -14,8 +14,8 @@ def wait_time(seconds):
     return seconds
 
 
-@timer.printTimedResult_dec
-def _printTimedResult_dec(seconds):
+@timer.print_timed_result_dec
+def _print_timed_result_dec(seconds):
     time.sleep(seconds/100)
     return seconds
 
@@ -25,13 +25,13 @@ def _printTimedResult_dec(seconds):
 # --------        --------
 
 
-@timer.printTime_dec
-def wait_printTime(seconds):
+@timer.print_time_dec
+def wait_print_time(seconds):
     time.sleep(seconds/100)
     return seconds
 
 
-@timer.getTime_dec
+@timer.get_time_dec
 def wait_log_time(seconds):
     time.sleep(seconds/100)
     return seconds
@@ -44,54 +44,54 @@ class TestTimer(unittest.TestCase):
     # --------  Combined  --------
     # --------            --------
 
-    def test_runTimedResult(self):
-        actual = timer.runTimedResult(wait_time, 1)
+    def test_run_timed_result(self):
+        actual = timer.run_timed_result(wait_time, 1)
         expected = 1
-        self.assertEqual(actual, expected, 'runTimedResult')
+        self.assertEqual(actual, expected, 'run_timed_result')
 
-    def test_printTimedResult_dec(self):
-        actual = _printTimedResult_dec(1)
+    def test_print_timed_result_dec(self):
+        actual = _print_timed_result_dec(1)
         expected = 1
-        self.assertEqual(actual, expected, 'printTimedResult_dec')
+        self.assertEqual(actual, expected, 'print_timed_result_dec')
 
     # --------          --------
     # --------  Result  --------
     # --------          --------
 
-    def test_runResult(self):
-        actual = timer.runResult(wait_time, 1)
+    def test_run_result(self):
+        actual = timer.run_result(wait_time, 1)
         expected = 1
-        self.assertEqual(actual, expected, 'runResult')
+        self.assertEqual(actual, expected, 'run_result')
 
-    def test_printResult(self):
+    def test_print_result(self):
         actual = wait_time(1)
-        timer.printResult(actual, "printResult", 1)
+        timer.print_result(actual, "print_result", 1)
         expected = 1
-        self.assertEqual(actual, expected, 'printResult')
+        self.assertEqual(actual, expected, 'print_result')
 
     # --------        --------
     # --------  Time  --------
     # --------        --------
 
-    def test_printTime_dec(self):
-        actual = wait_printTime(1)
+    def test_print_time_dec(self):
+        actual = wait_print_time(1)
         expected = 1
-        self.assertEqual(actual, expected, 'printTime_dec')
+        self.assertEqual(actual, expected, 'print_time_dec')
 
-    def test_getTime_dec(self):
+    def test_get_time_dec(self):
         actual, time_dict = wait_log_time(1)
-        timer.printTime("getTime_dec", time_dict)
+        timer.print_time("get_time_dec", time_dict)
         expected = 1
-        self.assertEqual(actual, expected, 'getTime_dec')
+        self.assertEqual(actual, expected, 'get_time_dec')
 
-    def test_printTime(self):
+    def test_print_time(self):
         begin = time.time()
         actual = wait_time(1)
-        timer.printTime("printTime", {"begin": begin, "end": time.time()})
+        timer.print_time("print_time", {"begin": begin, "end": time.time()})
         expected = 1
-        self.assertEqual(actual, expected, 'printTime')
+        self.assertEqual(actual, expected, 'print_time')
 
-    def test_runTimed(self):
-        actual = timer.runTimed(wait_time, 1)
+    def test_run_timed(self):
+        actual = timer.run_timed(wait_time, 1)
         expected = 1
-        self.assertEqual(actual, expected, 'runTimed')
+        self.assertEqual(actual, expected, 'run_timed')
