@@ -8,6 +8,7 @@ class DoubleLinkNode():
         self.right = right
 
     def __str__(self):
+        """Print data ."""
         return f"{self.data}"
 
 
@@ -17,6 +18,7 @@ class DoubleLinkList():
         self.tail = None
 
     def __str__(self):
+        """Print data as comma delimited list."""
         string = ""
         if self.head:
             node = self.head

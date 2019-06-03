@@ -11,6 +11,7 @@ class BinaryNode():
         self.childRight = childRight
 
     def __str__(self):
+        """Print data."""
         return f"{self.data}"
 
 
@@ -21,6 +22,7 @@ class BinaryTree():
         self.root = None
 
     def __str__(self):
+        """Print data in-order."""
         return str(self.getInOrderList())
 
     def _add(self, data, node):
@@ -72,6 +74,7 @@ class MultiBinaryNode():
         self.childRight = childRight
 
     def __str__(self):
+        """Print data in-order."""
         return f"{self.data}"
 
 
@@ -82,6 +85,7 @@ class MultiBinaryTree():
         self.root = None
 
     def __str__(self):
+        """Print data in-order."""
         return str(self.getInOrderList())
 
     def _add(self, data, node):
