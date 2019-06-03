@@ -3,12 +3,12 @@ import unittest
 from src import search
 from src import timer
 
-ordered_list = [1,2,3,4,5,6,7,8,10,12,15,20,25,30,31,32]
+orderedList = [1,2,3,4,5,6,7,8,10,12,15,20,25,30,31,32]
 
 
 class TestSearch(unittest.TestCase):
 
     def test_binarySearch(self):
-        actual = timer.runTimedResult(search.binarySearch, ordered_list, 15)
+        actual = timer.runTimedResult(search.binarySearch, orderedList, 15)
         expected = 10
         self.assertEqual(actual, expected, 'binarySearch')
