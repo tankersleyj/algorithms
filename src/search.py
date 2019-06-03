@@ -1,7 +1,7 @@
 #  MIT (c) jtankersley 2019-05-18
 
 
-def binarySearch(orderedList, value):
+def binary_search(orderedList, value):
     
     def _search(orderedList, value, low, high):
         if (high - low) > 1:

@@ -3,7 +3,7 @@ import math
 from src import timer
 
 
-def isFactorial(n):
+def is_factorial(n):
     f = 1
     i = 0
     result = False
@@ -16,7 +16,7 @@ def isFactorial(n):
     return result
 
 
-def getFactors(n):
+def get_factors(n):
     factors = []
     for i in range(1, n):
         if n % i == 0:
@@ -24,7 +24,7 @@ def getFactors(n):
     return factors
 
 
-def getFactorial(n):
+def get_factorial(n):
     result = 0
     if n > 0:
         result = 1

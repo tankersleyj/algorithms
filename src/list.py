@@ -8,6 +8,7 @@ class DoubleLinkNode():
         self.right = right
 
     def __str__(self):
+        """Print data ."""
         return f"{self.data}"
 
 
@@ -17,6 +18,7 @@ class DoubleLinkList():
         self.tail = None
 
     def __str__(self):
+        """Print data as comma delimited list."""
         string = ""
         if self.head:
             node = self.head
@@ -25,7 +27,7 @@ class DoubleLinkList():
                 node = node.right
         return string[:len(string) -1] if len(string) > 0 else ""
 
-    def addHead(self, data):
+    def add_head(self, data):
         if self.head:
             self.head = DoubleLinkNode(data, None, self.head)
             self.head.right.left = self.head
@@ -33,11 +35,11 @@ class DoubleLinkList():
             self.head = DoubleLinkNode(data)
             self.tail = self.head
 
-    def peekHead(self):
+    def peak_head(self):
         if self.head:
             return self.head.data
 
-    def popHead(self):
+    def pop_head(self):
         if self.head:
             node = self.head
             if self.head.right:
@@ -45,7 +47,7 @@ class DoubleLinkList():
                 self.head.left = None
             return node.data
 
-    def addTail(self, data):
+    def add_tail(self, data):
         if self.tail:
             self.tail.right = DoubleLinkNode(data, self.tail, None)
             self.tail = self.tail.right
@@ -53,11 +55,11 @@ class DoubleLinkList():
             self.head = DoubleLinkNode(data)
             self.tail = self.head
 
-    def peekTail(self):
+    def peek_tail(self):
         if self.tail:
             return self.tail.data
 
-    def popTail(self):
+    def pop_tail(self):
         if self.tail:
             node = self.tail
             if self.tail.left:

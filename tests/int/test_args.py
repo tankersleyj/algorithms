@@ -7,8 +7,8 @@ class TestArgs(unittest.TestCase):
 
     def test_args_CommandHandler(self):
         cmd = args.CommandHandler()
-        self.assertEqual(cmd.isCommand('discover'), True, "isCommand")
+        self.assertEqual(cmd.is_command('discover'), True, "is_command")
         self.assertEqual(cmd._commands, ['discover'], "_commands")
-        self.assertEqual(cmd.isHandled(), True, "isHandled")
+        self.assertEqual(cmd.is_handled(), True, "is_handled")
         self.assertEqual(
-            cmd.getHelp(), "  commands: ['discover']\r\n", "getHelp")
+            cmd.get_help(), "  commands: ['discover']\r\n", "get_help")

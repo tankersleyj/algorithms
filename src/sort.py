@@ -1,7 +1,7 @@
 #  MIT (c) jtankersley 2019-05-18
 
 
-def bubbleSort(list):
+def bubble_sort(list):
     def _swap_list_items(list, a, b):
         saved = list[a]
         list[a] = list[b]
@@ -14,7 +14,7 @@ def bubbleSort(list):
     return list
 
 
-def mergeSort(list):
+def merge_sort(list):
 
     def _merge(list, low, mid, high):
         new_list = []
@@ -48,6 +48,6 @@ def mergeSort(list):
     return list
 
 
-def pythonSort(list):
+def python_sort(list):
     list.sort()
     return list

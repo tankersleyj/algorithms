@@ -8,42 +8,42 @@ class TestSort(unittest.TestCase):
 
     def test_link_doubleLinkList_head(self):
         dll = list.DoubleLinkList()
-        dll.addHead(1)
-        dll.addHead(2)
-        dll.addHead(3)
-        actual = timer.runTimedResult(str, dll)
+        dll.add_head(1)
+        dll.add_head(2)
+        dll.add_head(3)
+        actual = timer.run_timed_result(str, dll)
         expected = "3,2,1"
         self.assertEqual(actual, expected, "test_link_dllHead.1")
 
-        actual = timer.runTimedResult(dll.peekHead)
+        actual = timer.run_timed_result(dll.peak_head)
         expected = 3
         self.assertEqual(actual, expected, "test_link_dllHead.2")
 
-        actual = actual = timer.runTimedResult(dll.popHead)
+        actual = actual = timer.run_timed_result(dll.pop_head)
         expected = 3
         self.assertEqual(actual, expected, "test_link_dllHead.3")
 
-        actual = timer.runTimedResult(str, dll)
+        actual = timer.run_timed_result(str, dll)
         expected = "2,1"
         self.assertEqual(actual, expected, "test_link_dllHead.4")
 
     def test_link_doubleLinkList_tail(self):
         dll = list.DoubleLinkList()
-        dll.addTail(1)
-        dll.addTail(2)
-        dll.addTail(3)
-        actual = timer.runTimedResult(str, dll)
+        dll.add_tail(1)
+        dll.add_tail(2)
+        dll.add_tail(3)
+        actual = timer.run_timed_result(str, dll)
         expected = "1,2,3"
         self.assertEqual(actual, expected, "test_link_dllTail.1")
 
-        actual = timer.runTimedResult(dll.peekTail)
+        actual = timer.run_timed_result(dll.peek_tail)
         expected = 3
         self.assertEqual(actual, expected, "test_link_dllTail.2")
 
-        actual = actual = timer.runTimedResult(dll.popTail)
+        actual = actual = timer.run_timed_result(dll.pop_tail)
         expected = 3
         self.assertEqual(actual, expected, "test_link_dllTail.3")
 
-        actual = timer.runTimedResult(str, dll)
+        actual = timer.run_timed_result(str, dll)
         expected = "1,2"
         self.assertEqual(actual, expected, "test_link_dllTail.4")
