@@ -1,7 +1,7 @@
 #  MIT (c) jtankersley 2019-05-18
 
 
-class DoubleNode():
+class DoubleLinkNode():
     def __init__(self, data=None, left=None, right=None):
         self.data = data
         self.left = left
@@ -11,7 +11,7 @@ class DoubleNode():
         return f"{self.data}"
 
 
-class DoubleList():
+class DoubleLinkList():
     def __init__(self):
         self.head = None
         self.tail = None
@@ -27,10 +27,10 @@ class DoubleList():
 
     def addHead(self, data):
         if self.head:
-            self.head = DoubleNode(data, None, self.head)
+            self.head = DoubleLinkNode(data, None, self.head)
             self.head.right.left = self.head
         else:
-            self.head = DoubleNode(data)
+            self.head = DoubleLinkNode(data)
             self.tail = self.head
 
     def peekHead(self):
@@ -47,10 +47,10 @@ class DoubleList():
 
     def addTail(self, data):
         if self.tail:
-            self.tail.right = DoubleNode(data, self.tail, None)
+            self.tail.right = DoubleLinkNode(data, self.tail, None)
             self.tail = self.tail.right
         else:
-            self.head = DoubleNode(data)
+            self.head = DoubleLinkNode(data)
             self.tail = self.head
 
     def peekTail(self):

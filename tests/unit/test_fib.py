@@ -19,10 +19,8 @@ class TestFib(unittest.TestCase):
         self.assertEqual(actual, 5, 'getFib_recursive(5)')
         actual = timer.runTimedResult(fib.getFib_recursive, 16)
         self.assertEqual(actual, 987, 'getFib_recursive(16)')
-        actual = timer.runTimedResult(fib.getFib_recursive, 32)
-        self.assertEqual(actual, 2178309, 'getFib_recursive(32)')
-        # actual = timer.runTimedResult(fib.getFib_recursive, 64)
-        # self.assertEqual(actual, 2178309, 'getFib_recursive(64)')
+        actual = timer.runTimedResult(fib.getFib_recursive, 24)
+        self.assertEqual(actual, 46368, 'getFib_recursive(24)')
 
     def test_getFib_array(self):
         actual = timer.runTimedResult(fib.getFib_array, 1)
@@ -37,8 +35,8 @@ class TestFib(unittest.TestCase):
         self.assertEqual(actual, 5, 'getFib_array(5)')
         actual = timer.runTimedResult(fib.getFib_array, 16)
         self.assertEqual(actual, 987, 'getFib_array(16)')
-        actual = timer.runTimedResult(fib.getFib_array, 32)
-        self.assertEqual(actual, 2178309, 'getFib_array(32)')
+        actual = timer.runTimedResult(fib.getFib_array, 24)
+        self.assertEqual(actual, 46368, 'getFib_array(24)')
 
     def test_getFib_vars(self):
         actual = timer.runTimedResult(fib.getFib_vars, 1)
@@ -53,8 +51,8 @@ class TestFib(unittest.TestCase):
         self.assertEqual(actual, 5, 'getFib_vars(5)')
         actual = timer.runTimedResult(fib.getFib_vars, 16)
         self.assertEqual(actual, 987, 'getFib_vars(16)')
-        actual = timer.runTimedResult(fib.getFib_vars, 32)
-        self.assertEqual(actual, 2178309, 'getFib_vars(32)')
+        actual = timer.runTimedResult(fib.getFib_vars, 24)
+        self.assertEqual(actual, 46368, 'getFib_vars(24)')
 
     def test_getFib_var2(self):
         actual = timer.runTimedResult(fib.getFib_var2, 1)
@@ -69,5 +67,5 @@ class TestFib(unittest.TestCase):
         self.assertEqual(actual, 5, 'getFib_var2(5)')
         actual = timer.runTimedResult(fib.getFib_var2, 16)
         self.assertEqual(actual, 987, 'getFib_var2(16)')
-        actual = timer.runTimedResult(fib.getFib_var2, 32)
-        self.assertEqual(actual, 2178309, 'getFib_var2(32)')
+        actual = timer.runTimedResult(fib.getFib_var2, 24)
+        self.assertEqual(actual, 46368, 'getFib_var2(24)')
