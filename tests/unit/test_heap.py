@@ -18,6 +18,7 @@ class TestSort(unittest.TestCase):
         expected = multiOrderedList
         print(f"test_MinHeap={actual}")
         self.assertEqual(len(actual), len(expected), "test_MinHeap")
+
         actual = bt.get_sorted_list()
         print(f"test_MinHeap.sorted={actual}")
         self.assertEqual(actual, expected, "test_MinHeap.sorted")
@@ -30,6 +31,7 @@ class TestSort(unittest.TestCase):
         expected = multiOrderedList
         print(f"test_MaxHeap={actual}")
         self.assertEqual(len(actual), len(expected), "test_MaxHeap")
+
         actual = bt.get_sorted_list()
         print(f"test_MaxHeap.sorted={actual}")
         self.assertEqual(actual, expected, "test_MaxHeap.sorted")
