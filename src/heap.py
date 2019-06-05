@@ -65,15 +65,14 @@ class Heap():
  
     def _balance_down(self, index):
         max_index = len(self.heap) - 1
-        if index < max_index:
-            left_child_index = self._child_left_index(index)
-            right_child_index = self._child_right_index(index)
-            if left_child_index <= max_index:
-                self._balance_up(left_child_index)
-                self._balance_down(left_child_index)
-            if right_child_index <= max_index:
-                self._balance_up(right_child_index)
-                self._balance_down(right_child_index)
+        left_child_index = self._child_left_index(index)
+        right_child_index = self._child_right_index(index)
+        if left_child_index <= max_index:
+            self._balance_up(left_child_index)
+            self._balance_down(left_child_index)
+        if right_child_index <= max_index:
+            self._balance_up(right_child_index)
+            self._balance_down(right_child_index)
 
     def pop(self):
         last_index = len(self.heap) - 1
