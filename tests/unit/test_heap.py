@@ -23,6 +23,17 @@ class TestSort(unittest.TestCase):
         print(f"test_MinHeap.sorted={actual}")
         self.assertEqual(actual, expected, "test_MinHeap.sorted")
 
+    def test_MinHeapPop(self):
+        bt = heap.Heap(heap.HeapType.MINIMUM)
+        for n in multiUnOrderedList:
+            bt.add(n)
+        actual = []
+        while not bt.is_empty():
+            actual.append(bt.pop())
+        expected = multiOrderedList
+        print(f"test_MaxHeapPop={actual}")
+        self.assertEqual(actual, expected, "test_MaxHeapPop")
+
     def test_MaxHeap(self):
         bt = heap.Heap(heap.HeapType.MAXIMUM)
         for n in multiUnOrderedList:
@@ -35,3 +46,15 @@ class TestSort(unittest.TestCase):
         actual = bt.get_sorted_list()
         print(f"test_MaxHeap.sorted={actual}")
         self.assertEqual(actual, expected, "test_MaxHeap.sorted")
+
+    def test_MaxHeapPop(self):
+        bt = heap.Heap(heap.HeapType.MAXIMUM)
+        for n in multiUnOrderedList:
+            bt.add(n)
+        actual = []
+        while not bt.is_empty():
+            actual.append(bt.pop())
+        expected = multiOrderedList.copy()
+        expected.reverse()
+        print(f"test_MaxHeapPop={actual}")
+        self.assertEqual(actual, expected, "test_MaxHeapPop")
