@@ -1,7 +1,8 @@
 # MIT (c) jtankersley 2019-06-04
 import unittest
-from src import heap
+from src import heapq
 from src import timer
+
 
 multiUnOrderedDictList = [
     (31,"u"),(3,"e"),(2,"b"),(4,"g"),(32,"v"),(7,"j"),(1,"a"),(20,"r"),(7,"k"),(3,"d"),(15,"q"),
@@ -16,24 +17,13 @@ multiOrderedDictReverseList = [
 
 class TestHeap(unittest.TestCase):
 
-    def test_MinHeapPriority(self):
-        mh = heap.Heap(heap.HeapType.MINIMUM, multiUnOrderedDictList)
-        print(f"mh.MinHeapPriority.str={str(mh)}")
+    def test_HeapQPriorityPop(self):
+        mh = heapq.HeapQ(multiUnOrderedDictList)
+        print(f"mh.HeapQPop.str={str(mh)}")
         actual = []
         while not mh.is_empty():
             actual.append(mh.pop())
         expected = multiOrderedDictList
-        print(f"mh.MinHeapPriority.actual={actual}")
-        print(f"mh.MinHeapPriority.expected={expected}")
-        self.assertEqual(len(actual), len(expected), "test_MinHeapPriority")
-
-    def test_MaxHeapPriority(self):
-        mh = heap.Heap(heap.HeapType.MAXIMUM, multiUnOrderedDictList)
-        print(f"mh.MaxHeapPriority.str={str(mh)}")
-        actual = []
-        while not mh.is_empty():
-            actual.append(mh.pop())
-        expected = multiOrderedDictList
-        print(f"mh.MaxHeapPriority.actual={actual}")
-        print(f"mh.MaxHeapPriority.expected={expected}")
-        self.assertEqual(len(actual), len(expected), "test_MaxHeapPriority")
+        print(f"HeapQPop.actual={actual}")
+        print(f"HeapQPop.expected={expected}")
+        self.assertEqual(actual, expected, "test_HeapQPop")
