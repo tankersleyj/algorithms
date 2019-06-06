@@ -16,7 +16,7 @@ class TestGraph(unittest.TestCase):
 
     def test_Search(self):
         g = graph.Graph(graph_matrix)
-        print(f"{str(g)}")
+        print(f"distance matrix\r\n{str(g)}")
         actual = g.get_shortest_distance(0,2)
         expected = 4
         self.assertEqual(actual, expected, "test_Graph")

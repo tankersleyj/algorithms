@@ -27,20 +27,29 @@ class Graph():
     def __init__(self, matrix):
         self.matrix = matrix
         self.size = len(self.matrix)
-        self.verticies = [f"{chr(index + 97)}" for index in range(self.size)]
+        self.verticies = self._get_verticies(self.size)
 
     def __str__(self):
         """Print matrix"""
+        return self._get_matrix_string(self.matrix)
+
+    def _get_verticies(self, size):
+        return [f"{chr(index + 97)}" for index in range(self.size)]
+
+    def _get_matrix_string(self, matrix):
         labels = []
-        strings = []
-        labels_string = ", ".join(self.verticies)
-        strings.append(f"   {labels_string}")
-        for index, row in enumerate(self.matrix):
-            strings.append(f"{self.verticies[index]} {row}")
-        string = "\r\n".join(strings)
-        return str(f"{string}")
+        rows = []
+        verticies = self._get_verticies(len(matrix))
+        labels_string = ", ".join(verticies)
+        rows.append(f"   {labels_string}")
+        for index, row in enumerate(matrix):
+            rows.append(f"{verticies[index]} {row}")
+        matrix_string = "\r\n".join(rows)
+        return matrix_string
 
     def get_shortest_distance(self, start_index, end_index):
-        visited = self.matrix.copy()
+        visited = [[0 for index in range(self.size)] for index in range(self.size)]  # empty matrix
+        visited[start_index][start_index] = 1
+        print(f"visited\r\n{self._get_matrix_string(visited)}")
         neighbors = self.matrix[start_index]
         return 4
