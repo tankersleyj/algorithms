@@ -1,4 +1,4 @@
-# MIT (c) jtankersley 2019-05-19
+# MIT (c) jtankersley 2019-06-04
 import unittest
 from src import heap
 from src import timer
