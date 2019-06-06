@@ -10,7 +10,7 @@ multiOrderedList = [1,2,3,3,3,3,4,5,6,7,7,8,10,12,12,12,15,20,25,30,31,32]
 multiUnOrderedList = [10,20,12,31,3,4,12,6,5,15,7,3,2,12,25,3,3,30,32,1,7,8]
 
 
-class TestSort(unittest.TestCase):
+class TestTree(unittest.TestCase):
 
     def test_BinaryTree(self):
         bt = tree.BinaryTree()
