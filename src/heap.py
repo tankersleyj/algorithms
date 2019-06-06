@@ -1,6 +1,7 @@
 #  MIT (c) jtankersley 2019-06-04
 
 from enum import Enum
+import heapq
 
 
 """
@@ -92,4 +93,32 @@ class Heap():
     def get_sorted_list(self):
         copy_list = self.heap.copy()
         copy_list.sort()
+        return copy_list
+
+
+""" Min array based Heap using Python heapq."""
+class HeapQ():
+
+    def __init__(self):
+        self.heap = []
+
+    def __str__(self):
+        """Print value in-order."""
+        return str(self.get_sorted_list())
+
+    def is_empty(self):
+        return True if len(self.heap) == 0 else False
+
+    def add(self, value):
+        heapq.heappush(self.heap, value)    
+ 
+    def pop(self):
+        last_index = len(self.heap) - 1
+        if last_index >= 0:
+            return heapq.heappop(self.heap)      
+
+    def get_sorted_list(self):
+        copy_list = self.heap.copy()
+        while not self.is_empty():
+            copy_list.append(heapq.heappop(self.heap))
         return copy_list
