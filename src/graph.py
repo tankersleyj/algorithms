@@ -36,8 +36,8 @@ class Graph():
     def _get_verticies(self, size):
         return [f"{chr(index + 97)}" for index in range(self.size)]
 
-    def _get_empty_matrix(self, size):
-        return [[0 for index in range(self.size)] for index in range(self.size)]
+    def _create_matrix(self, size, fill_value=0):
+        return [[fill_value for index in range(self.size)] for index in range(self.size)]
 
     def _get_matrix_string(self, matrix):
         labels = []
@@ -51,11 +51,21 @@ class Graph():
         return matrix_string
 
     # in-progress
-    def get_shortest_distance_double_bfs(self, start_index, end_index):
-        visited = self._get_empty_matrix(self.size)
+    def get_shortest_distance_dijkstra(self, start_index, end_index):
+        visited = self._create_matrix(self.size, 0)
         visited[start_index][start_index] = 1
         visited[end_index][end_index] = 1
         print(f"visited:\r\n{self._get_matrix_string(visited)}")
         start_neighbors = self.matrix[start_index]
         end_neighbors = self.matrix[end_index]
-        return 4
+        return 4  # faker
+
+    # in-progress
+    def get_shortest_distance_double_bfs(self, start_index, end_index):
+        visited = self._create_matrix(self.size, 0)
+        visited[start_index][start_index] = 1
+        visited[end_index][end_index] = 1
+        print(f"visited:\r\n{self._get_matrix_string(visited)}")
+        start_neighbors = self.matrix[start_index]
+        end_neighbors = self.matrix[end_index]
+        return 4  # faker

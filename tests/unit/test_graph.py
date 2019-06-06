@@ -14,7 +14,14 @@ graph_matrix = [
 
 class TestGraph(unittest.TestCase):
 
-    def test_Search(self):
+    def test_dijkstra(self):
+        g = graph.Graph(graph_matrix)
+        print(f"distance matrix:\r\n{str(g)}")
+        actual = g.get_shortest_distance_dijkstra(0,2)
+        expected = 4
+        self.assertEqual(actual, expected, "test_Graph.get_shortest_distance_dijkstra")
+
+    def test_double_bfs(self):
         g = graph.Graph(graph_matrix)
         print(f"distance matrix:\r\n{str(g)}")
         actual = g.get_shortest_distance_double_bfs(0,2)
