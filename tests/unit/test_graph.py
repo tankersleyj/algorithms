@@ -1,4 +1,4 @@
-# MIT (c) jtankersley 2019-05-19
+# MIT (c) jtankersley 2019-06-05
 import unittest
 from src import graph
 from src import timer
@@ -16,7 +16,7 @@ class TestGraph(unittest.TestCase):
 
     def test_Search(self):
         g = graph.Graph(graph_matrix)
-        print(f"distance matrix\r\n{str(g)}")
-        actual = g.get_shortest_distance(0,2)
+        print(f"distance matrix:\r\n{str(g)}")
+        actual = g.get_shortest_distance_double_bfs(0,2)
         expected = 4
-        self.assertEqual(actual, expected, "test_Graph")
+        self.assertEqual(actual, expected, "test_Graph.get_shortest_distance_double_bfs")

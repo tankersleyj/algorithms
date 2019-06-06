@@ -1,4 +1,4 @@
-#  MIT (c) jtankersley 2019-06-03
+#  MIT (c) jtankersley 2019-06-05
 
 from enum import Enum
 
@@ -30,11 +30,14 @@ class Graph():
         self.verticies = self._get_verticies(self.size)
 
     def __str__(self):
-        """Print matrix"""
+        """Print matrix."""
         return self._get_matrix_string(self.matrix)
 
     def _get_verticies(self, size):
         return [f"{chr(index + 97)}" for index in range(self.size)]
+
+    def _get_empty_matrix(self, size):
+        return [[0 for index in range(self.size)] for index in range(self.size)]
 
     def _get_matrix_string(self, matrix):
         labels = []
@@ -47,9 +50,12 @@ class Graph():
         matrix_string = "\r\n".join(rows)
         return matrix_string
 
-    def get_shortest_distance(self, start_index, end_index):
-        visited = [[0 for index in range(self.size)] for index in range(self.size)]  # empty matrix
+    # in-progress
+    def get_shortest_distance_double_bfs(self, start_index, end_index):
+        visited = self._get_empty_matrix(self.size)
         visited[start_index][start_index] = 1
-        print(f"visited\r\n{self._get_matrix_string(visited)}")
-        neighbors = self.matrix[start_index]
+        visited[end_index][end_index] = 1
+        print(f"visited:\r\n{self._get_matrix_string(visited)}")
+        start_neighbors = self.matrix[start_index]
+        end_neighbors = self.matrix[end_index]
         return 4

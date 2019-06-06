@@ -1,4 +1,4 @@
-#  MIT (c) jtankersley 2019-06-03
+#  MIT (c) jtankersley 2019-06-04
 
 from enum import Enum
 
