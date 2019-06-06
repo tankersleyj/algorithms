@@ -24,9 +24,12 @@ class HeapType(Enum):
 """ Min or Max array based Heap."""
 class Heap():
 
-    def __init__(self, type):
+    def __init__(self, type, list=[]):
         self.heap = []
         self.type = type
+        if len(list) > 0:
+            for index, value in enumerate(list):
+                self.push(value)
 
     def __str__(self):
         """Print value in-order."""
@@ -59,7 +62,7 @@ class Heap():
                 self._swap(index, parent_index)
                 self._balance_up(parent_index)
 
-    def add(self, value):
+    def push(self, value):
         self.heap.append(value)
         last_index = len(self.heap) - 1
         self._balance_up(last_index)      
@@ -79,7 +82,6 @@ class Heap():
         last_index = len(self.heap) - 1
         if last_index >= 0:
             value = self.heap[0]
-            print(f"pop={value}")
             if last_index > 0:
                 self.heap[0] = self.heap.pop()
                 self._balance_down(0)
@@ -99,8 +101,11 @@ class Heap():
 """ Min array based Heap using Python heapq."""
 class HeapQ():
 
-    def __init__(self):
+    def __init__(self, list):
         self.heap = []
+        if len(list) > 0:
+            for index, value in enumerate(list):
+                self.push(value)
 
     def __str__(self):
         """Print value in-order."""
@@ -109,7 +114,7 @@ class HeapQ():
     def is_empty(self):
         return True if len(self.heap) == 0 else False
 
-    def add(self, value):
+    def push(self, value):
         heapq.heappush(self.heap, value)    
  
     def pop(self):
@@ -117,8 +122,7 @@ class HeapQ():
         if last_index >= 0:
             return heapq.heappop(self.heap)      
 
-    def get_sorted_list(self):
+    def get_sorted_list(self, reverse=False):
         copy_list = self.heap.copy()
-        while not self.is_empty():
-            copy_list.append(heapq.heappop(self.heap))
+        copy_list.sort(reverse=reverse)
         return copy_list

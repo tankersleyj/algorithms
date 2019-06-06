@@ -5,15 +5,14 @@ from src import timer
 
 
 multiOrderedList = [1,2,3,3,3,3,4,5,6,7,7,8,10,12,12,12,15,20,25,30,31,32]
+multiOrderedReverseList = [32,31,30,25,20,15,12,12,12,10,8,7,7,6,5,4,3,3,3,3,2,1]
 multiUnOrderedList = [10,20,12,31,3,4,12,6,5,15,7,3,2,12,25,3,3,30,32,1,7,8]
 
 
 class TestHeap(unittest.TestCase):
 
     def test_MinHeap(self):
-        mh = heap.Heap(heap.HeapType.MINIMUM)
-        for n in multiUnOrderedList:
-            mh.add(n)
+        mh = heap.Heap(heap.HeapType.MINIMUM, multiUnOrderedList)
         actual = mh.get_in_order_list()
         expected = multiOrderedList
         print(f"test_MinHeap={actual}")
@@ -26,7 +25,7 @@ class TestHeap(unittest.TestCase):
     def test_MinHeapPop(self):
         mh = heap.Heap(heap.HeapType.MINIMUM)
         for n in multiUnOrderedList:
-            mh.add(n)
+            mh.push(n)
         actual = []
         while not mh.is_empty():
             actual.append(mh.pop())
@@ -35,9 +34,7 @@ class TestHeap(unittest.TestCase):
         self.assertEqual(actual, expected, "test_MaxHeapPop")
 
     def test_MaxHeap(self):
-        mh = heap.Heap(heap.HeapType.MAXIMUM)
-        for n in multiUnOrderedList:
-            mh.add(n)
+        mh = heap.Heap(heap.HeapType.MAXIMUM, multiUnOrderedList)
         actual = mh.get_in_order_list()
         expected = multiOrderedList
         print(f"test_MaxHeap={actual}")
@@ -50,7 +47,7 @@ class TestHeap(unittest.TestCase):
     def test_MaxHeapPop(self):
         mh = heap.Heap(heap.HeapType.MAXIMUM)
         for n in multiUnOrderedList:
-            mh.add(n)
+            mh.push(n)
         actual = []
         while not mh.is_empty():
             actual.append(mh.pop())
@@ -59,13 +56,25 @@ class TestHeap(unittest.TestCase):
         print(f"test_MaxHeapPop={actual}")
         self.assertEqual(actual, expected, "test_MaxHeapPop")
 
-    def test_HeapQ(self):
-        mh = heap.HeapQ()
-        for n in multiUnOrderedList:
-            mh.add(n)
+    def test_HeapQPop(self):
+        mh = heap.HeapQ(multiUnOrderedList)
         actual = []
         while not mh.is_empty():
             actual.append(mh.pop())
         expected = multiOrderedList
         print(f"test_HeapQ={actual}")
-        self.assertEqual(actual, expected, "test_MaxHeapPop")
+        self.assertEqual(actual, expected, "test_MaxHeapQPop")
+
+    def test_HeapQSort(self):
+        mh = heap.HeapQ(multiUnOrderedList)
+        actual = mh.get_sorted_list()
+        expected = multiOrderedList
+        print(f"test_HeapQ.sort={actual}")
+        self.assertEqual(actual, expected, "test_MaxHeapQSort")
+
+    def test_HeapQReverseSort(self):
+        mh = heap.HeapQ(multiUnOrderedList)
+        actual = mh.get_sorted_list(True)
+        expected = multiOrderedReverseList
+        print(f"test_HeapQ.reverseSort={actual}")
+        self.assertEqual(actual, expected, "test_MaxHeapQReverseSort")
