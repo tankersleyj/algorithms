@@ -17,7 +17,6 @@ class TestFact(unittest.TestCase):
         expected = [1, 11]
         self.assertEqual(actual, expected, "get_factors")
 
-
     def test_get_factorial(self):
         actual = timer.run_timed_result(fact.get_factorial, 10)
         expected = 362880
