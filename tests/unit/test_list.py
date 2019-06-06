@@ -4,7 +4,7 @@ from src import list
 from src import timer
 
 
-class TestSort(unittest.TestCase):
+class TestList(unittest.TestCase):
 
     def test_link_doubleLinkList_head(self):
         dll = list.DoubleLinkList()

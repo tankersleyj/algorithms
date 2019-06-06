@@ -5,8 +5,8 @@ from enum import Enum
 
 """
 Array based Heap.
-leftChildIndex = index * 2 + 1
-rightChildIndex = index * 2 + 2
+left_child_index = index * 2 + 1
+right_child_index = index * 2 + 2
 parentIndex = (index - 1) // 2
               00
       01              02
@@ -31,27 +31,60 @@ class Heap():
         """Print value in-order."""
         return str(self.get_in_order_list())
 
-    def _swap(self, list, index1, index2):
-        save = list[index1]
-        list[index1] = list[index2]
-        list[index2] = save
+    def is_empty(self):
+        return True if len(self.heap) == 0 else False
+
+    def _swap(self, index1, index2):
+        self.heap[index1], self.heap[index2] = self.heap[index2], self.heap[index1]
+
+    def _parent_index(self, index):
+        return (index - 1) // 2
+
+    def _child_left_index(self, index):
+        return index * 2 + 1
+
+    def _child_right_index(self, index):
+        return index * 2 + 2
 
     def _balance_up(self, index):
         if index > 0:
             value = self.heap[index]
-            parent_index = (index - 1) // 2
+            parent_index = self._parent_index(index)
             parent_value = self.heap[parent_index]
             if self.type == HeapType.MAXIMUM and value > parent_value:
-                self._swap(self.heap, index, parent_index)
+                self._swap(index, parent_index)
                 self._balance_up(parent_index)
             if self.type == HeapType.MINIMUM and value < parent_value:
-                self._swap(self.heap, index, parent_index)
+                self._swap(index, parent_index)
                 self._balance_up(parent_index)
 
     def add(self, value):
         self.heap.append(value)
         last_index = len(self.heap) - 1
-        self._balance_up(last_index)       
+        self._balance_up(last_index)      
+ 
+    def _balance_down(self, index):
+        max_index = len(self.heap) - 1
+        left_child_index = self._child_left_index(index)
+        right_child_index = self._child_right_index(index)
+        if left_child_index <= max_index:
+            self._balance_up(left_child_index)
+            self._balance_down(left_child_index)
+        if right_child_index <= max_index:
+            self._balance_up(right_child_index)
+            self._balance_down(right_child_index)
+
+    def pop(self):
+        last_index = len(self.heap) - 1
+        if last_index >= 0:
+            value = self.heap[0]
+            print(f"pop={value}")
+            if last_index > 0:
+                self.heap[0] = self.heap.pop()
+                self._balance_down(0)
+            else:
+                self.heap.pop()
+            return value       
 
     def get_in_order_list(self):
         return self.heap
