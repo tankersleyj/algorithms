@@ -53,12 +53,16 @@ class Graph():
         heapq.heappush(heap, start_node)
         while len(heap) > 0:
             next_node = heapq.heappop(heap)
+            next_node.visited = True
+            print(f"visit node {next_node.name}, distance from start = {next_node.distance_from_start_node}")
             for edge in next_node.edges:
+                print(f"    calculate edge {edge.end_node.name}, distance = {edge.distance}")
                 new_distance = edge.start_node.distance_from_start_node + edge.distance
                 if new_distance < edge.end_node.distance_from_start_node:
                     edge.end_node.prior_node = edge.start_node
                     edge.end_node.distance_from_start_node = new_distance
-                    heapq.heappush(heap, edge.end_node)
+                    if edge.end_node.visited == False:
+                        heapq.heappush(heap, edge.end_node)
 
     def get_distance_to(end_node):
         return end_node.distance_from_start_node
