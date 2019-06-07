@@ -4,6 +4,7 @@ from src import timer
 
 
 def is_factorial(n):
+    # does 1*2*3...*x exactly equal n
     f = 1
     i = 0
     result = False
@@ -17,6 +18,7 @@ def is_factorial(n):
 
 
 def get_factors(n):
+    # numbers divisible into n
     factors = []
     for i in range(1, n):
         if n % i == 0:
@@ -25,6 +27,7 @@ def get_factors(n):
 
 
 def get_factorial(n):
+    # 1*2*3 ...*n
     result = 0
     if n > 0:
         result = 1
