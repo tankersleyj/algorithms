@@ -24,8 +24,8 @@ e 1 2 3 4 0
 
 class Edge():
     
-    def __init__(self, weight, start, end):
-        self.weight = weight
+    def __init__(self, distance, start, end):
+        self.distance = distance
         self.start = start
         self.end = end
 
@@ -39,11 +39,11 @@ class Node():
         self.edges = []
         self.distance_from_start = sys.maxsize
 
-    def __cmp__(self, other):
-        self.cmp(self.distance_from_start, other.distance_from_start)
+    def __cmp__(self, other_node):
+        self.cmp(self.distance_from_start, other_node.distance_from_start)
 
-    def __lt__(self, other):
-        return self.distance_from_start < other.distance_from_start
+    def __lt__(self, other_node):
+        return self.distance_from_start < other_node.distance_from_start
 
 class Graph():
 
@@ -54,7 +54,7 @@ class Graph():
         while len(heap) > 0:
             vertext = heapq.heappop(heap)
             for edge in vertext.edges:
-                new_distance = edge.start.distance_from_start + edge.weight
+                new_distance = edge.start.distance_from_start + edge.distance
                 if new_distance < edge.end.distance_from_start:
                     edge.end.prior_node = edge.start
                     edge.end.distance_from_start = new_distance
