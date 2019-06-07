@@ -16,7 +16,7 @@ class TestGraph(unittest.TestCase):
 
     def test_Graph_Temp(self):
         g = grapha_sandbox.Graph(graph_matrix)
-        print(f"distance matrix:\r\n{str(g)}")
+        # print(f"distance matrix:\r\n{str(g)}")
         actual = g.get_shortest_distance(0,2)
         expected = 4
         self.assertEqual(actual, expected, "test_Graph.get_shortest_distance")

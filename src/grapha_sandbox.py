@@ -55,7 +55,7 @@ class Graph():
         visited = self._create_matrix(self.size, 0)
         visited[start_index][start_index] = 1
         visited[end_index][end_index] = 1
-        print(f"visited:\r\n{self._get_matrix_string(visited)}")
+        # print(f"visited:\r\n{self._get_matrix_string(visited)}")
         start_neighbors = self.matrix[start_index]
         end_neighbors = self.matrix[end_index]
         return 4  # faker

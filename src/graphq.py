@@ -24,10 +24,10 @@ e 1 2 3 4 0
 
 class Edge():
     
-    def __init__(self, weight, start, end):
-        self.weight = weight
-        self.start = start
-        self.end = end
+    def __init__(self, distance, start_node, end_node):
+        self.distance = distance
+        self.start_node = start_node
+        self.end_node = end_node
 
 """ HeapQ based Graph with Dijkstra shortest distance search """
 class Node():
@@ -37,43 +37,33 @@ class Node():
         self.visited = False
         self.prior_node = None
         self.edges = []
-        self.distance_from_start = sys.maxsize
+        self.distance_from_start_node = sys.maxsize
 
-    def __cmp__(self, other):
-        self.cmp(self.distance_from_start, other.distance_from_start)
+    def __cmp__(self, other_node):
+        self.cmp(self.distance_from_start_node, other_node.distance_from_start_node)
 
-    def __lt__(self, other):
-        return self.distance_from_start < other.distance_from_start
+    def __lt__(self, other_node):
+        return self.distance_from_start_node < other_node.distance_from_start_node
 
 class Graph():
 
-    def calculate_distances_from(start):
+    def calculate_distances_from(start_node):
         heap = []
-        start.distance_from_start = 0
-        heapq.heappush(heap, start)
+        start_node.distance_from_start_node = 0
+        heapq.heappush(heap, start_node)
         while len(heap) > 0:
-            vertext = heapq.heappop(heap)
-            for edge in vertext.edges:
-                new_distance = edge.start.distance_from_start + edge.weight
-                if new_distance < edge.end.distance_from_start:
-                    edge.end.prior_node = edge.start
-                    edge.end.distance_from_start = new_distance
-                    heapq.heappush(heap, edge.end)
+            next_node = heapq.heappop(heap)
+            for edge in next_node.edges:
+                new_distance = edge.start_node.distance_from_start_node + edge.distance
+                if new_distance < edge.end_node.distance_from_start_node:
+                    edge.end_node.prior_node = edge.start_node
+                    edge.end_node.distance_from_start_node = new_distance
+                    heapq.heappush(heap, edge.end_node)
 
-    def get_distance_to(end):
-        return end.distance_from_start
-
-    def _get_prior_nodes(node):
-        prior_nodes = []
-        if node.prior_node:
-            prior = node.prior_node
-            while not prior == None:
-                prior_nodes.append(prior)
-                prior = prior.prior_node
-        return prior_nodes
+    def get_distance_to(end_node):
+        return end_node.distance_from_start_node
 
     def show_distances(nodes):
         for node in nodes:
-            prior_nodes = Graph._get_prior_nodes(node)
-            prior_nodes_names = [node.name for node in prior_nodes]
-            print(f"{node.name}.distance={node.distance_from_start}, prior_nodes={prior_nodes_names}")
+            prior_node_name = node.prior_node.name if node.prior_node else ''
+            print(f"{node.name}.distance from start={node.distance_from_start_node}, prior node={prior_node_name}")
