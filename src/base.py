@@ -6,18 +6,18 @@ def _convert_number_to_char(number):
     char = "0"
     integer = int(number)
     if 0 <= integer <= 9:
-        char = chr(integer + 48)
-    elif 10 <= integer <= 55:
-        char = chr(integer + 55)
+        char = chr(integer + 48)  # char 48-57 = 0-9
+    elif 10 <= integer <= 35:
+        char = chr(integer + 55)  # char 65-90 = A-Z
     return char 
 
 
 def _convert_char_to_number(char):
     ord_val = ord(char)
     number = 0
-    if 48 <= ord_val <= 57:
+    if 48 <= ord_val <= 57:  # char 48-57 = 0-9
         number = ord_val - 48
-    elif 65 <= ord_val <= 90:
+    elif 65 <= ord_val <= 90:  # char 65-90 = A-Z
         number = ord_val - 55
     return number 
 
