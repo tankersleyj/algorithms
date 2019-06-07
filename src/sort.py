@@ -2,6 +2,8 @@
 
 
 def bubble_sort(list):
+    # Only viable for very short lists
+
     def _swap_list_items(list, a, b):
         saved = list[a]
         list[a] = list[b]
@@ -15,6 +17,7 @@ def bubble_sort(list):
 
 
 def merge_sort(list):
+    # O(n log n) sort of list via divide and merge
 
     def _merge(list, low, mid, high):
         new_list = []
