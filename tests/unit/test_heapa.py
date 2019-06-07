@@ -1,6 +1,6 @@
 # MIT (c) jtankersley 2019-06-04
 import unittest
-from src import heap
+from src import heapa
 from src import timer
 
 multiUnOrderedDictList = [
@@ -17,7 +17,7 @@ multiOrderedDictReverseList = [
 class TestHeap(unittest.TestCase):
 
     def test_MinHeapPriority(self):
-        mh = heap.Heap(heap.HeapType.MINIMUM, multiUnOrderedDictList)
+        mh = heapa.Heap(heapa.HeapType.MINIMUM, multiUnOrderedDictList)  # push list elements onto heap
         print(f"mh.MinHeapPriority.str={str(mh)}")
         actual = []
         while not mh.is_empty():
@@ -28,7 +28,7 @@ class TestHeap(unittest.TestCase):
         self.assertEqual(len(actual), len(expected), "test_MinHeapPriority")
 
     def test_MaxHeapPriority(self):
-        mh = heap.Heap(heap.HeapType.MAXIMUM, multiUnOrderedDictList)
+        mh = heapa.Heap(heapa.HeapType.MAXIMUM, multiUnOrderedDictList)  # push list elements onto heap
         print(f"mh.MaxHeapPriority.str={str(mh)}")
         actual = []
         while not mh.is_empty():

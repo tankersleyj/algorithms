@@ -18,7 +18,7 @@ multiOrderedDictReverseList = [
 class TestHeap(unittest.TestCase):
 
     def test_HeapQPriorityPop(self):
-        mh = heapq.HeapQ(multiUnOrderedDictList)
+        mh = heapq.HeapQ(multiUnOrderedDictList)  # push list elements onto heap
         print(f"mh.HeapQPop.str={str(mh)}")
         actual = []
         while not mh.is_empty():
