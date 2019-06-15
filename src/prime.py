@@ -118,7 +118,7 @@ class Prime():
         start_index = self._getIndexGte(start)
         end_index = self._getIndexLte(end)
         print(f"getPrimes: prime[{start_index}]={self.primes[start_index]}({start}) through prime[{end_index}]={self.primes[end_index]}({end})")
-        return self.primes[start_index:end_index]
+        return self.primes[start_index:end_index+1]
 
     def listPrimes(self, start, end):
         # print prime list
@@ -126,8 +126,6 @@ class Prime():
         start_index = self._getIndexGte(start)
         end_index = self._getIndexLte(end)
         count_primes = 0
-        print(f"listPrimes: prime[{start_index}]={self.primes[start_index]}({start}) through prime[{end_index}]={self.primes[end_index]}({end})")
-        for i in range(start_index, end_index + 1):
-            count_primes += 1
-            print(f"{self.primes[i]} is prime")
-        return count_primes
+        print(f"listPrimes: primes[{start_index}]={self.primes[start_index]}({start}) through primes[{end_index}]={self.primes[end_index]}({end})")
+        print(f"{self.primes[start_index:end_index+1]}")
+        return (end_index - start_index + 1)
