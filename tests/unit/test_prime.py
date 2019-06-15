@@ -24,9 +24,8 @@ class TestPrime(unittest.TestCase):
     def test_list_primes(self):
         start = 990
         end = 999
-        verbose = False
-        print(f"test_list_primes({start}, {end}, {verbose})")
-        actual = timer.run_timed_result(prime.list_primes, start, end, verbose)
+        print(f"test_list_primes({start}, {end})")
+        actual = timer.run_timed_result(prime.list_primes, start, end)
         expected = 2
         self.assertEqual(actual, expected, f'list_primes({start}, {end})')
 
@@ -50,11 +49,9 @@ class TestPrime(unittest.TestCase):
     def test_computePrimes(self):
         start = 990
         end = 999
-        logPrimes = True
-        logNonPrimes = False
-        print(f"test_computePrimes({start}, {end}, {logPrimes}, {logNonPrimes})")
+        print(f"test_computePrimes({start}, {end})")
         p = prime.Prime()
-        actual = timer.run_timed_result(p.computePrimes, end, logPrimes, logNonPrimes)
+        actual = timer.run_timed_result(p.computePrimes, end)
         expected = 1009
         self.assertEqual(actual, expected, f'listPrimes({start}, {end})')
 
