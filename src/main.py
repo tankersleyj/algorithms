@@ -66,15 +66,41 @@ def execute():
     if cmd.is_command("is_prime"):
         timer.run_timed_result(
             prime.is_prime,
-            int(cmd.arg(2, "11"))
+            int(cmd.arg(2, "997"))
         )
     if cmd.is_command("get_primes"):
         timer.run_timed_result(
             prime.get_primes,
-            int(cmd.arg(2, "9999999900")),
-            int(cmd.arg(3, "9999999999")),
+            int(cmd.arg(2, "900")),
+            int(cmd.arg(3, "999")),
             bool(cmd.arg(4, False))
         )
+    if cmd.is_command("isPrime"):
+        p = prime.Prime()
+        timer.run_timed_result(
+            p.compute_primes,
+            int(cmd.arg(2, "997")),
+            bool(cmd.arg(4, True))
+        )
+        timer.run_timed_result(
+            p.is_prime,
+            int(cmd.arg(2, "997")),
+            bool(cmd.arg(3, True))
+        )
+    if cmd.is_command("getPrimes"):
+        p = prime.Prime()
+        timer.run_timed_result(
+            p.compute_primes,
+            int(cmd.arg(3, "999")),
+            bool(cmd.arg(4, True))
+        )
+        timer.run_timed_result(
+            p.get_primes,
+            int(cmd.arg(2, "900")),
+            int(cmd.arg(3, "999")),
+            bool(cmd.arg(4, True))
+        )
+
     if cmd.is_command("binary_search"):
         timer.run_timed_result(
             search.binary_search,
