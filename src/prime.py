@@ -15,13 +15,13 @@ def is_prime(n):
     return True, n
 
 
-def get_primes(start, end):
+def get_primes(start, end, verbose=False):
     count_primes = 0
     for i in range(start, end + 1):
         prime, divisor = is_prime(i)
         if prime:
             count_primes += 1
             print(f"{i} is prime")
-        # else:
-            # print(f"{i} divisible by {divisor}")
+        elif verbose:
+            print(f"{i} divisible by {divisor}")
     return count_primes

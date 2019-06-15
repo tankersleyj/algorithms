@@ -72,7 +72,8 @@ def execute():
         timer.run_timed_result(
             prime.get_primes,
             int(cmd.arg(2, "9999999900")),
-            int(cmd.arg(3, "9999999999"))
+            int(cmd.arg(3, "9999999999")),
+            bool(cmd.arg(4, False))
         )
     if cmd.is_command("binary_search"):
         timer.run_timed_result(
