@@ -38,7 +38,8 @@ def list_primes(start, end):
 
 
 class Prime():
-    # Compute primes list and compute from modulus of prior computed primes (jtankersley, 2019-06-15)
+    # Compute primes list and compute from modulus of prior computed primes 
+    # Class optimized to calculate primes faster, but is actually much slower... :(
 
     def __init__(self):
        self.primes = [3,5,7,11,13,17,19,23]
