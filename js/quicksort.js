@@ -1,36 +1,42 @@
-// refactored from: https://www.guru99.com/quicksort-in-javascript.html
+// MIT (c) jtankersley 2020-01-12, Quick Sort (log n)
+// refactored by J.Tankersley from: https://www.guru99.com/quicksort-in-javascript.html
 
-function swap(items, leftIndex, rightIndex){
-    var temp = items[leftIndex];
-    items[leftIndex] = items[rightIndex];
-    items[rightIndex] = temp;
-}
-
-function partition(items, left, right) {
-    var pivot = items[Math.floor((right + left) / 2)], // middle element
-        i = left, // left pointer
-        j = right; // right pointer
-    while (i <= j) {
-        while (items[i] < pivot) {i++}
-        while (items[j] > pivot) {j--}
-        if (i <= j) {swap(items, i++, j--)} // [de]increment i and j after call to swap
+function quickSort(items) { // array
+    function _arraySwap(items, left, right){ // array, left index, right index
+        var temp = items[left];
+        items[left] = items[right];
+        items[right] = temp;
     }
-    return i;
-}
-
-function quickSort(items, left, right) {
-    var index;
-    if (items.length > 1) {
-        index = partition(items, left, right); // index returned from partition
-        if (left < index - 1) {quickSort(items, left, index - 1)} // more elements on the left side of the pivot (+1)
-        if (right > index) {quickSort(items, index, right)} // more elements on the right side of the pivot
+    function _partition(items, left, right) { // array, left index, right index
+        var pivot = items[Math.floor((left + right) / 2)], // middle value
+            i = left, // left pointer
+            j = right; // right pointer
+        while (i < j) {
+            while (items[i] < pivot) {i++}
+            while (items[j] > pivot) {j--}
+            if (i < j) {_arraySwap(items, i++, j--)} // [de]increment pointers after call to swap
+        }
+        return i; // middle index
     }
-    return items;
+    function _recur(items, left, right) { // array, left index, right index
+        var middle;
+        if (items.length > 1) {
+            middle = _partition(items, left, right); // index returned from partition
+            if (left < middle - 1) {_partition(items, left, middle - 1)} // more elements on the left side of the pivot (non-inclusive)
+            if (right > middle) {_partition(items, middle, right)} // more elements on the right side of the pivot (inclusive)
+        }
+        return items;
+    }
+    return _recur(items, 0, items.length - 1);
 }
 
-// first call to quick sort (highlightCode > rightClick > Run Code)
+// Test (mac+vscode+Code Runner: cmd+a > right+click > Run Code | mac: ctrl+option+n)
 (function test_quickSort() {
-    var items = [5,3,7,6,2,9,1,-4,-9,0,8,-3];
-    var sortedArray = quickSort(items, 0, items.length - 1);
-    console.log(sortedArray); // prints [ -9, -4, -3, 0, 1, 2, 3, 5, 6, 7, 8, 9 ]
+    var items = [5,3,7,-2,6,2,9,1,-4,-9,0,8,-3];
+    console.log(quickSort(items)); // expect: [ -9, -4, -3, -2, 0, 1, 2, 3, 5, 6, 7, 8, 9 ]
+    console.log(items); // expect: [ -9, -4, -3, -2, 0, 1, 2, 3, 5, 6, 7, 8, 9 ]
+    console.log(quickSort([1])); // expect: [ 1 ]
+    console.log(quickSort([1,2])); // expect: [ 1, 2 ]
+    console.log(quickSort([5,3])); // expect: [ 3, 5 ]
+    console.log(quickSort([2,1,3])); // expect: [ 1, 2, 3 ]
 })()
