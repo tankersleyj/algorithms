@@ -28,6 +28,7 @@ function getFibNumbers(n) { // reurn values inclusive of index n of [0,1,1,2,3,5
     return numbers;
 }
 
+// Test (Code Runner: ctrl+option+n)
 (function test_getFibN() {
     console.log(getFibRecur(0)); // expect 0
     console.log(getFibRecur(1)); // expect 1

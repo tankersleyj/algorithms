@@ -30,7 +30,7 @@ function quickSort(items) { // array
     return _recur(items, 0, items.length - 1);
 }
 
-// Test (mac+vscode+Code Runner: cmd+a > right+click > Run Code | mac: ctrl+option+n)
+// Test (Code Runner: ctrl+option+n)
 (function test_quickSort() {
     var items = [5,3,7,-2,6,2,9,1,-4,-9,0,8,-3];
     console.log(quickSort(items)); // expect: [ -9, -4, -3, -2, 0, 1, 2, 3, 5, 6, 7, 8, 9 ]
