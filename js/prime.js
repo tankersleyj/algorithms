@@ -1,5 +1,4 @@
 // MIT (c) jtankersley 2020-01-12, compare values and arrays
-// reference: // https://javascript.info/comparison
 
 function minFactor(value) {
     let result=value, maxFactor=Math.floor(Math.sqrt(value)) + 1;

@@ -1,5 +1,5 @@
 // MIT (c) jtankersley 2020-01-12, compare values and arrays
-// reference: // https://javascript.info/comparison
+// reference: https://javascript.info/comparison
 
 function compareValues(value1, value2) {
     if (value1 > value2) return 1;
