@@ -1,5 +1,5 @@
 // MIT (c) jtankersley 2020-01-12, Quick Sort (log n) and Bubble Sort (n^2)
-// refactored by J.Tankersley from: https://www.guru99.com/quicksort-in-javascript.html
+// reference: https://www.guru99.com/quicksort-in-javascript.html
 
 function swapItemValues(items, i, j) {
     let temp = items[i];
