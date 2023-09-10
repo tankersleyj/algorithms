@@ -5,7 +5,7 @@ if [ $# -eq 0 -o "$1" == '-h' -o "$1" == '--help' ]; then
   echo "  ./test.sh tests"
   echo "  ./test.sh tests/unit *sort*"
 elif [ $# -eq 1 ]; then
-  ./_venv/bin/python3 -m unittest discover -s "./$1"
+  .conda/python -m unittest discover -s "./$1"
 else
-  ./_venv/bin/python3 -m unittest discover -s "./$1" -p "$2"
+  .conda/python -m unittest discover -s "./$1" -p "$2"
 fi

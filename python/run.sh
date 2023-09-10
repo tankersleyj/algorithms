@@ -1,2 +1,2 @@
 #!/bin/bash
-./_venv/bin/python3 -m src $@
+.conda/python -m src $@
